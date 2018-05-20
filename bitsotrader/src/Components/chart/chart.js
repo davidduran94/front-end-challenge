@@ -22,7 +22,7 @@ class Chart extends Component {
 
 	/*Calculate the color of the bar with the close an open values*/
 	calculateColor(currentCandle){
-		if( currentCandle.close - currentCandle.open > 0){
+		if( currentCandle.close - currentCandle.open < 0){
 			return "greenCandleBar"
 		}else{
 			return "redCandleBar"
