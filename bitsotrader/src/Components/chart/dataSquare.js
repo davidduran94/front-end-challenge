@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
 
-class VolumeBar extends Component {
+class DataSquare extends Component {
 	constructor(props){
 		super(props);
-		//this.ha
+		
 	}
 
 	/*Eventos*/
@@ -19,7 +19,7 @@ class VolumeBar extends Component {
 		return (
 
 			 <rect className="cls-4 volum" 
-                    x={this.props.x} y={this.props.y} width={this.props.width} height={this.props.height} stroke-width="0.1"
+                    x="25.95" y="20" width="15" height="15" stroke-width="0.1"
                     onMouseOver={this.handleMouseOver} 
                     onMouseOut={this.handleMouseOut}
             />
@@ -28,4 +28,4 @@ class VolumeBar extends Component {
 	}
 }
 
-export default VolumeBar;
+export default DataSquare;

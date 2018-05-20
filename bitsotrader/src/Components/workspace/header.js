@@ -30,8 +30,18 @@ class Header extends Component {
 			      	<a href="#" className="arrowContainer"> <img className="arrowDown" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 			      </div>
 			      <div className="col16 dataH"> <p>Ayuda</p> </div>
-			      <div className="col16 dataH"> <p>Usuario</p> </div>
-			      <div className="col16 dataH"> <p>Luna</p> </div>
+			      <div className="col16 dataH"> 
+			      	<div className="userPhotoCircle"> 
+			      		<div className="userPhotoCont"> <div className="userPhoto"> </div> </div>
+			      	</div>
+			      	<p>Usuario</p> 
+			      </div>
+			      <div className="col16 dataH"> 
+			      	<label className="switch">
+					  <input type="checkbox" />
+					  <span className="slider round"></span>
+					</label>
+			      </div>
 			    </div>
 			    
 			  </div>

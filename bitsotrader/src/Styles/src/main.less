@@ -8,6 +8,90 @@
   height: 100px;
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: @BackgroundNavy;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: @MediumNavy;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: @DarkNavy;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.userPhotoCircle{
+  width: 45px; 
+  height: 45px;
+  border-radius: 50%;
+  background-color: @MediumNavy;
+  z-index: 1;
+}
+.userPhotoCont{
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  background-color: @DarkNavy;
+  z-index: 2;
+  margin-left: 3px;
+}
+.userPhoto{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: @MediumNavy;
+  z-index: 30;
+  margin-left: 3px; 
+  display: none;
+}
+
+
+
 .redLetter {
 	color: @redLetter;
 }
@@ -62,7 +146,7 @@
   justify-content: space-between;
 }
 .dataHeaderContainer div{
-  margin-right: 55px;
+  margin-right: 5px;
   display: flex;
 }
 
@@ -170,9 +254,7 @@ thead tr th{
 .settingsChart{
   height: 70px;
 }
-.candleChartContainer{
-  height: 400px;
-}
+
 .buyContainer{
   height: 40px;
   background-color: @SidebarBackground;

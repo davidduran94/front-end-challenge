@@ -10,8 +10,32 @@
 .cls-4{fill-opacity:0.4;}
 .cls-3{fill:none;}
 
+
+.greenCandleBar{
+	fill:#86af6b; 
+	stroke-width: 0.25;
+	fill-opacity:0.4;
+}
+.redCandleBar{
+	fill-opacity:0.4;
+	fill:#ba3040;
+	stroke:#ba3040;
+}
+
  .candle:hover { 
  }
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  
+/* CSS Statements that only apply on webkit-based browsers (Chrome, Safari, etc.) */  
+  line.dash {
+    stroke:rgb(30, 30, 30);
+    stroke-width: 0.08;
+
+   }
+
+
+}
 
 line.dash {
     stroke:rgb(198, 201, 204);
@@ -20,3 +44,14 @@ line.dash {
 
 
 .line{}
+
+.chartContainer{
+	width: 100%; 
+	height: 100%; 
+	background-color: rgb(25,30,35);
+}
+
+#BoxTrading{
+	width: 100%;
+	height: auto;
+}
