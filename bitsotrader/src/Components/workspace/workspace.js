@@ -12,7 +12,7 @@ import SubHeader from '../workspace/subheader.js';
 class Workspace extends Component {
 	
 	GetZoom(){
-		return 120; // 100% equivale a 75 velas
+		return 90; // 100% equivale a 75 velas
 	}
 
 	CalculateCandlesWidth(){
@@ -63,7 +63,29 @@ class Workspace extends Component {
 				    <div className="col75">
 				      
 				      <div className="settingsChart row">
-				      	<p>Periodo</p>
+				      	<div className="typeChart"> 
+				      		<div className="col5 dataSH divSelectorLight"> 
+						      	<a href="#" className="selectIconContainer"> <img className="candlesIcons" src="/dist/Assets/Images/SVG/icon_candles.svg" /> </a> 
+						      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
+						    </div>
+				      	</div>
+
+				      	<div className="typePeriod"> 
+				      		<p>Periodo</p>
+				      		<div className="col5 dataSH divSelectorLight"> 
+						      	<a href="#" className="selectIconContainer"> <img className="candlesIcons" src="/dist/Assets/Images/SVG/icon_candles.svg" /> </a> 
+						      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
+						    </div>
+				      	</div>
+
+				      	<div className="typeInterval"> 
+				      		<p>Intervalo</p>
+				      		<div className="col5 dataSH divSelectorLight"> 
+						      	<a href="#" className="selectIconContainer"> <img className="candlesIcons" src="/dist/Assets/Images/SVG/icon_candles.svg" /> </a> 
+						      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
+						    </div>
+				      	</div>
+				      	
 				      </div>
 
 				      <div className="candleChartContainer row">
