@@ -22,7 +22,7 @@ class Chart extends Component {
 
 	/*Calculate the color of the bar with the close an open values*/
 	calculateColor(currentCandle){
-		if( currentCandle.close - currentCandle.open < 0){
+		if( currentCandle.open - currentCandle.close < 0){
 			return "greenCandleBar"
 		}else{
 			return "redCandleBar"
@@ -35,23 +35,34 @@ class Chart extends Component {
 		const result = [];
 		
 		for (var i = 0; i<this.props.data.length; i++) {
+			var rectY = 0
+			var unity = (90 / (Math.abs(this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice )))
+			var lby2 = 90;
+			if( this.props.data[i].close - this.props.data[i].open < 0){
+				rectY = ( (this.props.data[i].close - this.props.MinsMaxs.MinPrice) *  unity  )
+				lby2 = (rectY + ( unity * Math.abs(this.props.data[i].low - this.props.data[i].open))  ) 
+			}else{
+				rectY = ( (this.props.data[i].open - this.props.MinsMaxs.MinPrice) *  (unity) )
+				lby2 = (rectY + ( unity * Math.abs(this.props.data[i].low - this.props.data[i].close))  ) 
+			}
+
 			const actual = {
 				rectX : 0.5 + ((1+this.props.WidthCandle)*i) + "",
-				rectY:  ( (90 / (this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice) ) * Math.abs(this.props.data[i].open - this.props.MinsMaxs.MinPrice) ) + "" ,
+				rectY:  rectY + "" ,
 				width: this.props.WidthCandle + "",
-				height: ( (90 / (this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice )) * Math.abs(this.props.data[i].close - this.props.data[i].open ) )  + "",
+				height: ( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) + "" ,
 				
-				lineTopX1: "0.5",
-				lineTopX2: "1.75",
-				lineTopY1: "2.5",
-				lineTopY2: "0.5",
+				lineTopX1: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
+				lineTopX2: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
+				lineTopY1: ( (rectY -  ( unity * Math.abs(this.props.data[i].high - this.props.data[i].open))  ))  + "", 
+				lineTopY2: rectY + "",
 
-				lineBottomX1: "1.75",
-				lineBottomX2: "1.75",
-				lineBottomY1: "80",
-				lineBottomY2: "82",
+				lineBottomX1: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
+				lineBottomX2: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
+				lineBottomY1: rectY + ( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) + "", //(rectY + (( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) ) ) +  "", 
+				lineBottomY2: lby2 + "", //((rectY + (( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) ) )  + ( (unity) * this.props.data[i].low))  + "",
 
-				color : this.calculateColor(this.props.data[i] )
+				color : this.calculateColor(this.props.data[i])
 			}
 			result.push(actual)
 		}
@@ -61,9 +72,9 @@ class Chart extends Component {
 
 	GetContainers(){
 		const result = [];
-		
+		const width = this.props.WidthCandle;
 		for (var i = 0; i<this.props.data.length; i++) {
-			const actual = { id: 0.5 + ((1+this.props.WidthCandle)*i) + "" }
+			const actual = { id: 0.5 + ((1+this.props.WidthCandle)*i) + "", width: width+"" }
 			result.push(actual)
 		}
 		return result
@@ -71,7 +82,9 @@ class Chart extends Component {
 
 
 
-
+	/*
+	Calculate position and high volume bar from 0 to the max value
+	*/
 	GetVolumes(){
 		const result = [];
 		
@@ -79,7 +92,7 @@ class Chart extends Component {
 			const actual = { 
 				id : i,
 				x: 0.5 + ((1+this.props.WidthCandle)*i) + "",
-				y: (90 - ((3 / Math.abs(this.props.MinsMaxs.MaxVol) ) * Math.abs(this.props.data[i].volume) ) )+ "",
+				y: 0,//(0 + ((3 / Math.abs(this.props.MinsMaxs.MaxVol) ) * Math.abs(this.props.data[i].volume) ) )+ "",
 				width: this.props.WidthCandle,
 				height:  ((3 / Math.abs(this.props.MinsMaxs.MaxVol) ) * Math.abs(this.props.data[i].volume) ) + ""
 			}
@@ -97,7 +110,7 @@ class Chart extends Component {
 		return (
 				<div className="chartContainer">
 
-			        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 90" id="BoxTrading">
+			        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 90" id="BoxTrading" transform="scale(1 -1) translate(0 -200)">
 			            <defs>
 			                
 			            </defs>
@@ -108,16 +121,19 @@ class Chart extends Component {
 			                           
 			                            {
 			                        		Containers.map( (item) => {
-			                        			return <CandleContainer id={item.id} /> 
+			                        			return <CandleContainer id={item.id} width={item.width} /> 
 			                            	}
 			                            	)
 			                            }
 
 			                            
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="1" x2="290" y2="1"  ></line>
+			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="0" x2="290" y2="0"  ></line>
 			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="22.5" x2="290" y2="22.5"  ></line>
 			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="45" x2="290" y2="45"  ></line>
 			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="67.5" x2="290" y2="67.5"  ></line>
+			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="90" x2="290" y2="90"  ></line>
+
+			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="0" x2="0" y2="90"  ></line>
 			                            <line className="dash" stroke-dasharray="1, 0.5" x1="58" y1="0" x2="58" y2="90"  ></line>
 			                            <line className="dash" stroke-dasharray="1, 0.5" x1="116" y1="0" x2="116" y2="90"  ></line>
 			                            <line className="dash" stroke-dasharray="1, 0.5" x1="174" y1="0" x2="174" y2="90"  ></line>
