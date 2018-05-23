@@ -47,6 +47,7 @@ class Chart extends Component {
 			}
 
 			const actual = {
+				id: "candle" + i,
 				rectX : 0.5 + ((1+this.props.WidthCandle)*i) + "",
 				rectY:  rectY + "" ,
 				width: this.props.WidthCandle + "",
@@ -108,7 +109,7 @@ class Chart extends Component {
 		const Containers = this.GetContainers()
 		const Volumes = this.GetVolumes()
 		return (
-				<div className="chartContainer">
+				<div className="chartContainer" id="chartContainerR">
 
 			        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 90" id="BoxTrading" transform="scale(1 -1) translate(0 -200)">
 			            <defs>
@@ -145,20 +146,21 @@ class Chart extends Component {
 			                        {
 			                        	Candles.map( (item) => {
 			                        		return <Candle WidthCandle = {this.props.WidthCandle + ""} 
-			                        		rectX = {item.rectX}
-											rectY = {item.rectY}
-											width= {item.width}
-											height= {item.height}
-											lineTopX1= {item.lineTopX1}
-											lineTopX2= {item.lineTopX2}
-											lineTopY1= {item.lineTopY1}
-											lineTopY2= {item.lineTopY2}
-											lineBottomX1= {item.lineBottomX1}
-											lineBottomX2= {item.lineBottomX2}
-											lineBottomY1= {item.lineBottomY1}
-											lineBottomY2= {item.lineBottomY2}
-											data = {this.props.data}
-											color = {item.color}
+							                        		id = {item.id}
+							                        		rectX = {item.rectX}
+															rectY = {item.rectY}
+															width= {item.width}
+															height= {item.height}
+															lineTopX1= {item.lineTopX1}
+															lineTopX2= {item.lineTopX2}
+															lineTopY1= {item.lineTopY1}
+															lineTopY2= {item.lineTopY2}
+															lineBottomX1= {item.lineBottomX1}
+															lineBottomX2= {item.lineBottomX2}
+															lineBottomY1= {item.lineBottomY1}
+															lineBottomY2= {item.lineBottomY2}
+															data = {this.props.data}
+															color = {item.color}
 			                        		/>
 			                        	})
 			                    	}

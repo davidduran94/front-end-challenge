@@ -12,7 +12,7 @@ import SubHeader from '../workspace/subheader.js';
 class Workspace extends Component {
 	
 	GetZoom(){
-		return 90; // 100% equivale a 75 velas
+		return 75; // 100% equivale a 75 velas
 	}
 
 	CalculateCandlesWidth(){
