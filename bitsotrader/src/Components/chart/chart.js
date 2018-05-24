@@ -36,8 +36,8 @@ class Chart extends Component {
 		
 		for (var i = 0; i<this.props.data.length; i++) {
 			var rectY = 0
-			var unity = (90 / (Math.abs(this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice )))
-			var lby2 = 90;
+			var unity = (80 / (Math.abs(this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice )))
+			var lby2 = 80;
 			if( this.props.data[i].close - this.props.data[i].open < 0){
 				rectY = ( (this.props.data[i].close - this.props.MinsMaxs.MinPrice) *  unity  )
 				lby2 = (rectY + ( unity * Math.abs(this.props.data[i].low - this.props.data[i].open))  ) 
@@ -46,22 +46,23 @@ class Chart extends Component {
 				lby2 = (rectY + ( unity * Math.abs(this.props.data[i].low - this.props.data[i].close))  ) 
 			}
 
+
 			const actual = {
 				id: "candle" + i,
 				rectX : 0.5 + ((1+this.props.WidthCandle)*i) + "",
-				rectY:  rectY + "" ,
+				rectY:  rectY + 7 + "" ,
 				width: this.props.WidthCandle + "",
 				height: ( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) + "" ,
 				
 				lineTopX1: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
 				lineTopX2: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
-				lineTopY1: ( (rectY -  ( unity * Math.abs(this.props.data[i].high - this.props.data[i].open))  ))  + "", 
-				lineTopY2: rectY + "",
+				lineTopY1: ( (rectY -  ( unity * Math.abs(this.props.data[i].high - this.props.data[i].open))  ))  + 7 + "", 
+				lineTopY2: rectY + 7 +"",
 
 				lineBottomX1: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
 				lineBottomX2: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
-				lineBottomY1: rectY + ( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) + "", //(rectY + (( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) ) ) +  "", 
-				lineBottomY2: lby2 + "", //((rectY + (( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) ) )  + ( (unity) * this.props.data[i].low))  + "",
+				lineBottomY1: rectY + ( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) + 7 +"", //  
+				lineBottomY2: lby2 + 7 +  "", // 
 
 				color : this.calculateColor(this.props.data[i])
 			}

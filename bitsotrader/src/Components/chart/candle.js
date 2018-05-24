@@ -28,6 +28,8 @@ class Candle extends Component {
 
 	handleToolTip = (event, id, data1, data2) => {
 
+		event.target.setAttribute('stroke-width', '0.8');
+
 		var svgDocument = event.target.ownerDocument;
 
 		var tooltip1 = svgDocument.getElementById(id + "tt1");
@@ -60,7 +62,7 @@ class Candle extends Component {
         tooltip5.setAttributeNS(null,"x", data1);
         tooltip5.setAttributeNS(null,"y", data2+14);
 
-        tooltip_bg.setAttributeNS(null,"x",  data1 );
+        tooltip_bg.setAttributeNS(null,"x",  data1);
         tooltip_bg.setAttributeNS(null,"y",  data2 );
 
         tooltip_bg.setAttributeNS(null,"visibility","visibile");
@@ -73,8 +75,13 @@ class Candle extends Component {
 
 	}
 
+
+	/*
+		Return the candle to the original 
+	*/
 	hideToolTip = (event, id) => {
 		var svgDocument = event.target.ownerDocument;
+		event.target.setAttribute('stroke-width', '0.3');
 
 		var tooltip1 = svgDocument.getElementById(id + "tt1");
 		var tooltip2 = svgDocument.getElementById(id + "tt2");
@@ -103,14 +110,16 @@ class Candle extends Component {
 				<rect 
 					className={this.props.color} x={this.props.rectX} y={this.props.rectY} 
 					width={this.props.WidthCandle + ""} height={this.props.height} stroke-width="0.3" 
-					onMouseMove={((e) => this.handleToolTip(e, this.props.id, this.props.lineBottomX1, this.props.lineBottomY1, this.props.data))}  onMouseOut={((e) => this.hideToolTip(e, this.props.id))}
+					onMouseMove={((e) => this.handleToolTip(e, this.props.id, this.props.lineBottomX1, this.props.lineBottomY1, this.props.data))}  
+					onMouseOut={((e) => this.hideToolTip(e, this.props.id))}
+
 				/>
 
 	            <line className={this.props.color}  x1={this.props.lineTopX1} y1={this.props.lineTopY1} x2={this.props.lineTopX2} y2={this.props.lineTopY2} stroke-width="0.25" />
 	            <line className={this.props.color} x1={this.props.lineBottomX1} y1={this.props.lineBottomY1} x2={this.props.lineBottomX2} y2={this.props.lineBottomY2} stroke-width="0.25" />
            		
 	            <g >
-	           		<rect className="tooltip_bg cls-4 volum" id={this.props.id + "bg"} x="20" y="20" rx="3" ry="3" width="30" height="20" stroke-width="0.4" visibility="hidden"/>
+	           		<rect className="tooltip_bg cls-4 volum" id={this.props.id + "bg"} x="20" y="20" rx="3" ry="3" width="30" height="20" stroke-width="0.6" visibility="hidden"/>
 					<text className="tooltip" id={this.props.id + "tt1"} x="20" y="20" visibility="hidden">Tooltip</text>
 					<text className="tooltip" id={this.props.id + "tt2"} x="20" y="20" visibility="hidden">Tooltip</text>
 					<text className="tooltip" id={this.props.id + "tt3"} x="20" y="20" visibility="hidden">Tooltip</text>
