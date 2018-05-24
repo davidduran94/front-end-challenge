@@ -79,30 +79,25 @@ class Workspace extends Component {
 
 				<div className="container">
 				  <div className="row">
-				    
-				    <div className="col20">
-				   		<LastTrades/>
-				    </div>
+					    <div className="col20">
+					   		<LastTrades/>
+					    </div>
 
-				    <div className="col78">
-				      
-				      <Settings />
+					    <div className="col78">
+						      <Settings />
 
-				      <div className="candleChartContainer row">
-				      	<Chart data={this.props.data} MinsMaxs={MinsMaxs} WidthCandle={WidthCandle} Zoom={Zoom} />
-				      </div>
+						      <div className="candleChartContainer row">
+						      	<Chart data={this.props.data} MinsMaxs={MinsMaxs} WidthCandle={WidthCandle} Zoom={Zoom} />
+						      </div>
 
-				      <div className="sellBuyContainer row">
-							<Buys/>
-							<Sells/>
-				      </div>
-				    </div>
+						      <div className="sellBuyContainer row">
+									<Buys/>
+									<Sells/>
+						      </div>
+					    </div>
 
-				    <Markets/>
-
+				    	<Markets/>
 				  </div>
-
-
 				</div>
 
 

@@ -19,7 +19,7 @@ class VolumeBar extends Component {
 		return (
 
 			 <rect className="cls-4 volum" 
-                    x={this.props.x} y={this.props.y} width={this.props.width} height={this.props.height} stroke-width="0.1"
+                    x={this.props.x} y={this.props.y} width={this.props.width} height={this.props.height} strokeWidth="0.1"
                     onMouseOver={this.handleMouseOver} 
                     onMouseOut={this.handleMouseOut}
             />

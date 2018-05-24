@@ -147,17 +147,17 @@ class Chart extends Component {
 			                            }
 
 			                            
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="0" x2="290" y2="0"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="22.5" x2="290" y2="22.5"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="45" x2="290" y2="45"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="67.5" x2="290" y2="67.5"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="90" x2="290" y2="90"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="0" y1="0" x2="290" y2="0"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="0" y1="22.5" x2="290" y2="22.5"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="0" y1="45" x2="290" y2="45"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="0" y1="67.5" x2="290" y2="67.5"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="0" y1="90" x2="290" y2="90"  ></line>
 
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="0" y1="0" x2="0" y2="90"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="58" y1="0" x2="58" y2="90"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="116" y1="0" x2="116" y2="90"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="174" y1="0" x2="174" y2="90"  ></line>
-			                            <line className="dash" stroke-dasharray="1, 0.5" x1="232" y1="0" x2="232" y2="90"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="0" y1="0" x2="0" y2="90"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="58" y1="0" x2="58" y2="90"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="116" y1="0" x2="116" y2="90"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="174" y1="0" x2="174" y2="90"  ></line>
+			                            <line className="dash" strokeDasharray="1, 0.5" x1="232" y1="0" x2="232" y2="90"  ></line>
 			                    </g>
 
 			                    <g  id="Capa_1-2" data-name="Capa 1">			                        

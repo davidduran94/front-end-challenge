@@ -19,7 +19,7 @@ class CandleContainer extends Component {
 	render(){
 		return (
 			
-			  <rect className="candleCont" x={this.props.id} y="0" width={this.props.width} height="90" stroke-width="0.3" 
+			  <rect className="candleCont" x={this.props.id} y="0" width={this.props.width} height="90" strokeWidth="0.3" 
                 onMouseOver={this.handleMouseOver} 
                 onMouseOut={this.handleMouseOut}
              />	
