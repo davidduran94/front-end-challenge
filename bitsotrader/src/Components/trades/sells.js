@@ -16,7 +16,7 @@ class Sells extends Component {
 	  	</div>
 
 	  	<div className="lastTradesTableC">
-			<table className="tableLTData">
+			<table className="tableMData">
 			  <thead>
 			    <tr>
 				    <th className="lightLetter"><span className="darkLetter">mxn</span> precio</th>
@@ -27,49 +27,49 @@ class Sells extends Component {
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
+			    <tr className="hovDataRowR">
+			      <td className="precioDataRed">134,134.00</td>
+			      <td className="horaData">12:00:00</td> 
+			      <td className="montoData">0.002523</td>
+			      <td className="montoData">0.002523</td>
+			      <td className="horaData"> <div className="barRed"></div> </td>
+	    		</tr>
+	    		<tr className="hovDataRowR">
 			      <td className="precioDataRed">134,134.00</td>
 			      <td className="horaData">12:00:00</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="horaData"> <div className="barRed"></div> </td>
 	    		</tr>
-	    		<tr>
+	    		<tr className="hovDataRowR">
 			      <td className="precioDataRed">134,134.00</td>
 			      <td className="horaData">12:00:00</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="horaData"> <div className="barRed"></div> </td>
 	    		</tr>
-	    		<tr>
+	    		<tr className="hovDataRowR">
 			      <td className="precioDataRed">134,134.00</td>
 			      <td className="horaData">12:00:00</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="horaData"> <div className="barRed"></div> </td>
 	    		</tr>
-	    		<tr>
+	    		<tr className="hovDataRowR">
 			      <td className="precioDataRed">134,134.00</td>
 			      <td className="horaData">12:00:00</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="horaData"> <div className="barRed"></div> </td>
 	    		</tr>
-	    		<tr>
+	    		<tr className="hovDataRowR">
 			      <td className="precioDataRed">134,134.00</td>
 			      <td className="horaData">12:00:00</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="montoData">0.002523</td>
 			      <td className="horaData"> <div className="barRed"></div> </td>
 	    		</tr>
-	    		<tr>
-			      <td className="precioDataRed">134,134.00</td>
-			      <td className="horaData">12:00:00</td>
-			      <td className="montoData">0.002523</td>
-			      <td className="montoData">0.002523</td>
-			      <td className="horaData"> <div className="barRed"></div> </td>
-	    		</tr>
-	    		<tr>
+	    		<tr className="hovDataRowR"> 
 			      <td className="precioDataRed">134,134.00</td>
 			      <td className="horaData">12:00:00</td>
 			      <td className="montoData">0.002523</td>

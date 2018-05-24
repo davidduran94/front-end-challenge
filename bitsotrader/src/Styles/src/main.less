@@ -103,6 +103,7 @@ input:checked + .slider:before {
 }
 .lightLetter{
   color: @LightText;
+  text-align: right;
 }
 .letterBig1{
   font-size: 15px;
@@ -129,6 +130,7 @@ input:checked + .slider:before {
 .dataH p {
   margin-top: 4px;
   display: flex;
+  margin-left: 10px;
 }
 
 .downArrow{
@@ -239,7 +241,7 @@ input:checked + .slider:before {
 .zoomButtonC{
   width: 75px;
   height: 30px;
-  margin-left: 30% !important;
+  margin-left: 85% !important;
   display: flex;
 
 }
@@ -315,8 +317,7 @@ input:checked + .slider:before {
 
 thead tr th{
   text-transform: uppercase;
-  text-align: center;
-  margin-right: 10px;
+  text-align: right;
 }
 .lastTradesTableC{
   width: 100%;
@@ -338,6 +339,16 @@ thead tr th{
   color: @LightText;
   text-align: right;
 }
+.barDataG{
+  color: @LightText;
+  text-align: right;
+  width: 0px;
+}
+.barDataR{
+  color: @LightText;
+  text-align: right;
+  width: 0px;
+}
 
 
 
@@ -348,7 +359,7 @@ thead tr th{
 }
 
 .sellBuyContainer{
-  margin-top: 23%;
+  margin-top: 14.5%;
 }
 
 .buyContainer{
@@ -360,6 +371,7 @@ thead tr th{
   height: 40px;
   background-color: @SidebarBackground;
   margin-left: 10px;
+  width: 98% !important;
 }
 .sellTitle {
   display: flex;
@@ -384,11 +396,17 @@ thead tr th{
   background-color: @RegularGreen;
 }
 
+.barSize1{
+  width: 10px;
+}
+
+
 .barRed{
   width: 50px;
   height: 10px;
   background-color: @RegularRed;
   margin-left: 15px;
+  float: right;
 }
 
 
@@ -432,11 +450,29 @@ thead tr th{
   color: @LightText;
 }
 
+
+.hovDataRowG:hover{
+  background-color: @DarkGreen;
+}
+
+.hovDataRowR:hover{
+  background-color: @DarkRed;
+}
+
+
+.hovDataRowN:hover{
+  background-color: @NavyHeaders;
+}
+
 ///////// table
 
 
 .tableLTData{
   width: 85%;
+  text-align: center;
+}
+.tableMData{
+  width: 96%;
   text-align: center;
 }
 .col78{

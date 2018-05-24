@@ -3,6 +3,8 @@ import LastTrades from '../trades/lastTrades.js';
 import Sells from '../trades/sells.js';
 import Buys from '../trades/buys.js';
 import Chart from '../chart/chart.js';
+import Settings from '../chart/settings.js';
+import Markets from '../markets/markets.js';
 
 import Header from '../workspace/header.js';
 import SubHeader from '../workspace/subheader.js';
@@ -67,7 +69,7 @@ class Workspace extends Component {
 	render(){
 		const WidthCandle = this.CalculateCandlesWidth();
 		var MinsMaxs = this.CalculateMaxAndMin();
-
+		var Zoom = this.GetZoom();
 		return (
 			<div className="worspaceContainer">
 				
@@ -84,46 +86,10 @@ class Workspace extends Component {
 
 				    <div className="col78">
 				      
-				      <div className="settingsChart row">
-				      	<div className="typeChart"> 
-				      		<div className="col5 dataSH divSelectorLight"> 
-						      	<a href="#" className="selectIconContainer"> <img className="candlesIcons" src="/dist/Assets/Images/SVG/icon_candles.svg" /> </a> 
-						      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
-						    </div>
-				      	</div>
-
-				      	<div className="typePeriod"> 
-				      		<p>Periodo</p>
-				      		<div className="col5 dataSH divSelectorDark"> 
-						      	<span> 3d </span> 
-						      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
-						    </div>
-				      	</div>
-
-				      	<div className="typeInterval"> 
-				      		<p>Intervalo</p>
-				      		<div className="col5 dataSH divSelectorDark"> 
-						      	<span> 1h </span> 
-						      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
-						    </div>
-				      	</div>
-
-				      	<div className="typeZoom">
-				      	<div className="divSelectorDark zoomButtonC"> 
-				      		<div className="less"> 
-						      	<a href="#" className="zoomless"> - </a> 
-						    </div>
-
-						    <div className="more"> 
-						      	<a href="#" className="zoomplus"> + </a> 						      	
-						    </div>
-				      	</div>
-				      	</div>
-
-				      </div>
+				      <Settings />
 
 				      <div className="candleChartContainer row">
-				      	<Chart data={this.props.data} MinsMaxs={MinsMaxs} WidthCandle={WidthCandle} />
+				      	<Chart data={this.props.data} MinsMaxs={MinsMaxs} WidthCandle={WidthCandle} Zoom={Zoom} />
 				      </div>
 
 				      <div className="sellBuyContainer row">
@@ -132,12 +98,7 @@ class Workspace extends Component {
 				      </div>
 				    </div>
 
-				    <div className="col2 merc">
-				      <div className="colVertical">
-				      	<a href="#" className="selectIconContainer verticalI"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
-				      	<span className="vertical"> MERCADOS </span> 
-				      </div>
-				    </div>
+				    <Markets/>
 
 				  </div>
 

@@ -33,11 +33,19 @@ class Chart extends Component {
 
 	GetCandles(){
 		const result = [];
-		
-		for (var i = 0; i<this.props.data.length; i++) {
+		var i = 0;
+
+		/*  Fix when zoom translate of chart feature is completed
+		var DataToShow = [];
+		if(this.props.Zoom < this.props.data.length ){
+			i= this.props.data.length - this.props.Zoom; 
+		}
+		*/
+
+		for (i ; i<this.props.data.length; i++) {
 			var rectY = 0
-			var unity = (80 / (Math.abs(this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice )))
-			var lby2 = 80;
+			var unity = (85 / (Math.abs(this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice )))
+			var lby2 = 85;
 			if( this.props.data[i].close - this.props.data[i].open < 0){
 				rectY = ( (this.props.data[i].close - this.props.MinsMaxs.MinPrice) *  unity  )
 				lby2 = (rectY + ( unity * Math.abs(this.props.data[i].low - this.props.data[i].open))  ) 
@@ -111,7 +119,17 @@ class Chart extends Component {
 		const Volumes = this.GetVolumes()
 		return (
 				<div className="chartContainer" id="chartContainerR">
+					<div className="rangeTime">
+						<p>1 Abril</p>
+						<p>1 Mayo</p>
+						<p>1 Junio</p>
+						<p>1 Julio</p>
+						<p>1 Agos</p>
+						<p>1 Sept</p>
+					</div>
 
+					<div className="graph">
+					
 			        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 90" id="BoxTrading" transform="scale(1 -1) translate(0 -200)">
 			            <defs>
 			                
@@ -181,6 +199,16 @@ class Chart extends Component {
 			                    </g>
 			                </g>
 			        </svg>
+
+			        <div className="rangePrice">
+						<p>100k</p>
+						<p>100k</p> 
+						<p>100k</p>
+						<p>100k</p>
+						<p></p>
+					</div>
+
+			        </div>
 			    </div>
 
 			)

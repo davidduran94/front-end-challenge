@@ -35,6 +35,7 @@ class Header extends Component {
 			      		<div className="userPhotoCont"> <div className="userPhoto"> </div> </div>
 			      	</div>
 			      	<p>Usuario</p> 
+			      	<a href="#" className="arrowContainer"> <img className="arrowDown" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 			      </div>
 			      <div className="col16 dataH"> 
 			      	<label className="switch">
