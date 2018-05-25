@@ -1,0 +1,76 @@
+.sidenav {
+    height: 100%;
+    width: 40px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: @RegularNavy;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    margin-top: 7%;
+    margin-right: 0px;
+}
+
+
+.topnav {
+    height: 50px;
+    width: 85%;
+    float: right;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: @DarkNavy;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5px;
+    margin-top: 0.5%;
+    margin-right: 0px;
+}
+#marketItemC{
+    display: none;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+
+.selectIconContainer.right{
+    padding: 0;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.colVertical{
+    margin-top: -22%;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.merc{
+  min-width: 3%;
+  margin: 0 0px 0 0px;
+  background-color: @RegularNavy ;
+  color: @LightText;
+  margin: -60px 0px 0 0px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
