@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 
+
+/*
+	Description: Component shows bitso's logo and sections of wallet, exchange, user and theme color change 
+	Style:       trades.less
+*/
 class Header extends Component {
 
 	render(){

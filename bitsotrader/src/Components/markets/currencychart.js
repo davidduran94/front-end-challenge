@@ -20,7 +20,7 @@ class CurrencyChart extends Component {
 
 		chart.style.display = "block"
 		chartC[0].style.background = '#161a1e'
-		chartC[0].style.height = '132px'
+		chartC[0].style.height = '145px'
 	}
 
 	hideNavChart = (event, id) => {
@@ -92,7 +92,7 @@ class CurrencyChart extends Component {
 									    onMouseOut={((e) => this.hideNavChart(e, this.props.id))} >
 				      	<Sparklines data={this.props.data} limit={15} width={100} height={40} margin={5}>
 						    <SparklinesLine color={this.getColorCode()} style={{ fill: "none", strokeWidth: 0.5}} />
-						    <SparklinesSpots />
+						    <SparklinesSpots style={{ fill: this.getColorCode(), stroke: this.getColorCode, strokeWidth: 0.1 }} />
 						</Sparklines>
 			      	</div>
 

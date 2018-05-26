@@ -1,0 +1,207 @@
+/*
+	*******	Chart Styles ********
+*/
+
+.candleCont {fill: rgb(25,30,35); }
+.cls-1{fill:#86af6b; stroke-width: 0.25;}
+.cls-1,
+.cls-2{fill-opacity:0.4;}
+.cls-1,.cls-3{stroke:#80c156;}
+.cls-1,.cls-2,
+.cls-3{stroke-miterlimit:10; stroke-width: 0.25}
+.cls-2{fill:#ba3040;stroke:#ba3040;}
+.cls-4{fill:#4e5863;stroke:#4e5863;}
+.cls-4{fill-opacity:0.4;}
+.cls-3{fill:none;}
+
+
+.greenCandleBar{
+	fill:#86af6b; 
+	stroke: #86af6b;
+	fill-opacity:0.4;
+}
+.redCandleBar{
+	fill-opacity:0.4;
+	fill:#ba3040;
+	stroke:#ba3040;
+}
+
+ .candle:hover { 
+ }
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  
+/* CSS Statements that only apply on webkit-based browsers (Chrome, Safari, etc.) */  
+  line.dash {
+    stroke:rgb(30, 30, 30);
+    stroke-width: 0.08;
+   }
+
+}
+
+line.dash {
+    stroke:rgb(198, 201, 204);
+    stroke-width: 0.038;
+}
+
+
+.line{}
+
+.chartContainer{
+	width: 100%; 
+	height: 100%; 
+	background-color: rgb(25,30,35);
+}
+
+#BoxTrading{
+	width: 96%;
+	height: auto;
+	margin-top: -14%;
+}
+
+
+.tooltip{
+	//font-family: Verdana;
+	fill:white;
+	font-size: 2px;
+}
+.tooltip_bg{
+	fill: @NavyHeaders;
+	opacity: 0.9;
+	//stroke-width=0.05;
+}
+
+.rangeTime{
+	width: 97%;
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 12px;
+	color: @MediumNavy;
+}
+.rangeTime p{}
+
+.rangePrice{
+	font-size: 12px;
+	color: #384555;
+	width: 30px;
+	height: 335px;
+	display: flex;
+	position: absolute;
+	margin-left: 74.4%;
+	justify-content: space-between;
+	flex-direction: column;
+	margin-top: -150px;
+}
+
+.graph{
+	
+}
+
+.candleChartContainer{
+	margin-top: 12px;
+}
+
+
+
+.settingsChart{
+  height: 70px;
+}
+
+.sellBuyContainer{
+  margin-top: 16%;
+}
+
+.buyContainer{
+  height: 40px;
+  background-color: @SidebarBackground;
+  margin-right: 10px;
+}
+.sellContainer{
+  height: 40px;
+  background-color: @SidebarBackground;
+  margin-left: 10px;
+  width: 98% !important;
+}
+.sellTitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 25px;
+  padding-top: 8px;
+}
+
+.buyTitle{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 40px;
+  padding-left: 25px;
+  padding-top: 8px;
+}
+.barGreen{
+  width: 50px;
+  height: 10px;
+  background-color: @RegularGreen;
+}
+
+.barSize1{
+  width: 10px;
+}
+
+
+.barRed{
+  width: 50px;
+  height: 10px;
+  background-color: @RegularRed;
+  margin-left: 15px;
+  float: right;
+}
+
+
+.vertical{
+   writing-mode:tb-rl;
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform:rotate(0deg);
+    transform: rotate(0deg);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    width:20px;
+    height:20px;
+}
+.verticalI{
+   margin:13px 0px 10px 12px;
+   text-transform: uppercase;
+   writing-mode:tb-rl;
+    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    transform: rotate(-90deg);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    width:20px;
+    height:20px;
+}
+
+.colVertical{
+  margin-left: 10px;
+}
+
+.hovDataRowG:hover{
+  background-color: @DarkGreen;
+}
+
+.hovDataRowR:hover{
+  background-color: @DarkRed;
+}
+
+
+.hovDataRowN:hover{
+  background-color: @NavyHeaders;
+}
