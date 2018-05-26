@@ -32,17 +32,27 @@
 .navHead{
     text-transform: uppercase;
     text-align: left;
-    background-color: @BackgroundNavy;
+    font-size: 1.2em;
+    background-color: @SidebarHeader;
+    width: 86%;
 }
 .navHead p{
-    margin-top: 12px;
-    margin-right: 4px;
+    margin-top: 14px;
+    margin-left: 10px;
+}
+.navItem.active{
+    background-color: @DarkNavy;
 }
 
 .navItem{
+    padding: 10px;
+    height: 22px;
+    background-color: @SidebarBackground;
+}
+
+.infoNav{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
 }
 
 #marketItemC{
@@ -55,7 +65,7 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: @SidebarText;
     display: block;
     transition: 0.3s;
 }
@@ -87,6 +97,37 @@
   background-color: @RegularNavy ;
   color: @LightText;
   margin: -60px 0px 0 0px;
+}
+
+.timenavI{
+    color: @DarkText;
+    font-size: 0.8em;
+    margin-top: 8.5px;
+    float: right;
+}
+
+.orderIconCont
+{
+    padding: 0px !important;
+    margin: 0px !important;
+    margin-top: -8px !important;
+}
+
+.orderDown{
+    fill: @DarkRed;
+    width: 7px;
+    transform: rotate(180deg);
+}
+.orderUp{
+    fill: @DarkGreen;
+    width: 7px;
+}
+.flex{
+    display: flex;
+}
+
+.colGraph{
+    display: none;
 }
 
 @media screen and (max-height: 450px) {

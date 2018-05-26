@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
-
+/*
+	Description: Component that shows the table of last trades
+	Style:       trades.less
+*/
 class LastTrades extends Component {
 	render(){
 		return (

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
-
+/*
+	Description: Component that shows the table of all buy positions
+	Style:       trades.less
+*/
 class Buys extends Component {
 	render(){
 		return (

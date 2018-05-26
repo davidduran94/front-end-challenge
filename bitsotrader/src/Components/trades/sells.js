@@ -1,9 +1,12 @@
-
 import React, {Component} from 'react';
-//import LastTrades from '../trades/lastTrades.js';
-//import stilos from '../../Styles/dist/main.css';
 
+
+/*
+	Description: Component that shows the table of all sell positions
+	Style:       trades.less
+*/
 class Sells extends Component {
+
 
 	render(){
 		return (
