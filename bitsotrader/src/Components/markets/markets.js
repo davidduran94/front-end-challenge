@@ -17,15 +17,26 @@ class Markets extends Component {
 
 
 	openNav() {
-    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("mySidenav").style.width = "320px";
     	document.getElementById("marketItemC").style.display = "block";
-	}
+	} 
 
 	closeNav() {
 	    document.getElementById("mySidenav").style.width = "40px";
 	    document.getElementById("marketItemC").style.display = "none";
 
 	}
+
+
+	openVerticalNav() {
+    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("marketItemC").style.display = "block";
+	} 
+
+	closeVerticalNav() {
+	    document.getElementById("mySidenav").style.width = "40px";
+	    document.getElementById("marketItemC").style.display = "none";
+	} 
 
 	render(){
 		return (
@@ -39,12 +50,20 @@ class Markets extends Component {
 			      </div>
 			     </div>
 
-			     <div id="marketItemC">
-				  <div className="topnav"></div>
-				  <div className="topnav"></div>
-				  <div className="topnav"></div>
-				  <div className="topnav"></div>
-				  <div className="topnav"></div>
+			     <div id="marketItemC">  
+				  <div className="topnav navHead"> <p>mercados 24 hrs</p> </div>
+				  <div className="topnav navItem">
+				  	<p className="darkLetter">BTC / MXN</p>
+				  	<p className="greenLetter">$172,948.00 MXN</p>
+
+				  	<div className="colGraph hidden ">
+				      	Grafica
+			      	</div>
+
+				  </div>
+				  <div className="topnav navItem"></div>
+				  <div className="topnav navItem"></div>
+				  <div className="topnav navItem"></div>
 				  </div>
 				</div>
 			</div>
