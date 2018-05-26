@@ -15,6 +15,39 @@ import SubHeader from '../workspace/subheader.js';
 */
 class Workspace extends Component {
 	
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      error: null,
+	      isLoaded: false,
+	      items: []
+	    };
+	}
+
+	componentDidMount() {
+	    fetch("https://bitso.com/trade/chartJSON/btc_mxn/1month")
+	      .then(res => res.json())
+	      .then(
+	        (result) => {
+	          this.setState({
+	            isLoaded: true,
+	            items: result
+	          });
+	          //this.props.data = items
+	          //console.log(result.items)
+	        },
+	        // Note: it's important to handle errors here
+	        // instead of a catch() block so that we don't swallow
+	        // exceptions from actual bugs in components.
+	        (error) => {
+	          this.setState({
+	            isLoaded: true,
+	            error
+	          });
+	        }
+	      )
+	}
+
 	/*
 		When the zoom has changed we reecalculate the position of the hole elements
 	*/
@@ -22,6 +55,15 @@ class Workspace extends Component {
 		return 75; 
 	}
 
+
+	changeTheme(){
+		if(this.props.theme == "dark"){
+			//change to white
+		}
+		else {
+			//change to 
+		}
+	}
 
 	/*
 		Zoom is calculated based on the how many candles will be displayed 
@@ -53,7 +95,7 @@ class Workspace extends Component {
 		}
 		
 		for (var i =0;  i<this.props.data.length; i++) {
-			console.log(result.MaxPrice)
+			//console.log(result.MaxPrice)
 
 			if( result.MaxPrice < Math.trunc(this.props.data[i].high)) { result.MaxPrice = this.props.data[i].high }
 			if( result.MinPrice > Math.trunc(this.props.data[i].low)) { result.MinPrice = this.props.data[i].low }
@@ -87,7 +129,7 @@ class Workspace extends Component {
 						      <Settings />
 
 						      <div className="candleChartContainer row">
-						      	<Chart data={this.props.data} MinsMaxs={MinsMaxs} WidthCandle={WidthCandle} Zoom={Zoom} />
+						      	<Chart data={this.state.items} MinsMaxs={MinsMaxs} WidthCandle={WidthCandle} Zoom={Zoom} />
 						      </div>
 
 						      <div className="sellBuyContainer row">
