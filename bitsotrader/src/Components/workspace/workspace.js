@@ -9,6 +9,10 @@ import Markets from '../markets/markets.js';
 import Header from '../workspace/header.js';
 import SubHeader from '../workspace/subheader.js';
 
+import {ConsultChart} from '../../Services/consultchart.js';
+import {_URLS} from '../../Services/constants.js';
+import {_CURRENCY} from '../../Services/constants.js';
+import {_TIMEPERIOD} from '../../Services/constants.js';
 
 /*
 	Represent all the area that is showed on the browser
@@ -20,64 +24,21 @@ class Workspace extends Component {
 	    this.state = {
 	      error: null,
 	      isLoaded: false,
-	      items: []
+	      items: [],
 	    };
 	}
 
+    componentWillMount() {
+    	ConsultChart(_URLS.historyBook, {"book": _CURRENCY.book_btc_mx, "period": _TIMEPERIOD.threemonths })
+    	.then((items) => {
+    		//console.log(items);
+        	this.setState({ items: items })
+      	})
+    }
+
+
 	componentDidMount() {
-	    fetch("https://bitso.com/trade/chartJSON/btc_mxn/1month")
-	      .then(res => res.json())
-	      .then(
-	        (result) => {
-	          this.setState({
-	            isLoaded: true,
-	            items: result
-	          });
-	          //this.props.data = items
-	          //console.log(result.items)
-	        },
-	        // Note: it's important to handle errors here
-	        // instead of a catch() block so that we don't swallow
-	        // exceptions from actual bugs in components.
-	        (error) => {
-	          this.setState({
-	            isLoaded: true,
-	            error
-	          });
-	        }
-	      )
-	}
-
-	/*
-		When the zoom has changed we reecalculate the position of the hole elements
-	*/
-	GetZoom(){
-		return 75; 
-	}
-
-
-	changeTheme(){
-		if(this.props.theme == "dark"){
-			//change to white
-		}
-		else {
-			//change to 
-		}
-	}
-
-	/*
-		Zoom is calculated based on the how many candles will be displayed 
-		If there will be 75 candles the zoom si 100%
-		Other side if it would be more candles the zoom is higher
-	*/
-	CalculateCandlesWidth(){
-		if(this.props.data.length > this.GetZoom()){
-			const ChartSize = 290 - this.GetZoom() ;
-			return ChartSize / this.GetZoom();
-		}else{
-			const ChartSize = 290 - this.GetZoom() ;
-			return ChartSize / this.GetZoom();
-		}
+	    
 	}
 
 
@@ -88,20 +49,20 @@ class Workspace extends Component {
 	*/
 	CalculateMaxAndMin(){
 		var result = {
-			MaxPrice : Math.trunc(this.props.data[0].high),
-			MinPrice : Math.trunc(this.props.data[0].low),
-			MaxVol : Math.trunc(this.props.data[0].volume),
-			MinVol : Math.trunc(this.props.data[0].volume)
+			MaxPrice : Math.trunc(this.state.items[0].high),
+			MinPrice : Math.trunc(this.state.items[0].low),
+			MaxVol : Math.trunc(this.state.items[0].volume),
+			MinVol : Math.trunc(this.state.items[0].volume)
 		}
 		
-		for (var i =0;  i<this.props.data.length; i++) {
+		for (var i =0;  i<this.state.items.length; i++) {
 			//console.log(result.MaxPrice)
 
-			if( result.MaxPrice < Math.trunc(this.props.data[i].high)) { result.MaxPrice = this.props.data[i].high }
-			if( result.MinPrice > Math.trunc(this.props.data[i].low)) { result.MinPrice = this.props.data[i].low }
+			if( result.MaxPrice < Math.trunc(this.state.items[i].high)) { result.MaxPrice = this.state.items[i].high }
+			if( result.MinPrice > Math.trunc(this.state.items[i].low)) { result.MinPrice = this.state.items[i].low }
 
-			if( Math.trunc(this.props.data[i].volume) >  result.MaxVol ) {result.MaxVol = this.props.data[i].volume}
-			if( Math.trunc(this.props.data[i].volume) <  result.MinVol ) {result.MinVol = this.props.data[i].volume}
+			if( Math.trunc(this.state.items[i].volume) >  result.MaxVol ) {result.MaxVol = this.state.items[i].volume}
+			if( Math.trunc(this.state.items[i].volume) <  result.MinVol ) {result.MinVol = this.state.items[i].volume}
 		}
 		
 		return result;
@@ -109,9 +70,10 @@ class Workspace extends Component {
 
 
 	render(){
-		const WidthCandle = this.CalculateCandlesWidth();
+	if (this.state.items.length > 0) {
+		//const WidthCandle = this.CalculateCandlesWidth();
 		var MinsMaxs = this.CalculateMaxAndMin();
-		var Zoom = this.GetZoom();
+		//var Zoom = this.GetZoom();
 		return (
 			<div className="worspaceContainer">
 				
@@ -129,7 +91,7 @@ class Workspace extends Component {
 						      <Settings />
 
 						      <div className="candleChartContainer row">
-						      	<Chart data={this.state.items} MinsMaxs={MinsMaxs} WidthCandle={WidthCandle} Zoom={Zoom} />
+						      	<Chart data={this.state.items} MinsMaxs={MinsMaxs}  />
 						      </div>
 
 						      <div className="sellBuyContainer row">
@@ -145,6 +107,19 @@ class Workspace extends Component {
 
 			</div>
 		)
+	}else{
+		      return (
+		      	<ul  className="charginC">
+				<li className="charginT"></li>
+				<li className="charginT"></li>
+				<li className="charginT"></li>
+				<li className="charginT"></li>
+				<li className="charginT"></li>
+				<li className="charginT"></li><li className="charginT"></li><li className="charginT"></li>
+			</ul>
+		      	)
+
+	}
 	}
 
 }

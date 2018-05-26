@@ -6,10 +6,20 @@ import Candle from '../chart/candle.js';
 
 
 class Chart extends Component {
-	constructor(props){
-		super(props);
-		//this.ha
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      error: null,
+	      isLoaded: false,
+	      zoom: 75,
+	      WidthCandle : "2.88"
+	    };
 	}
+
+	componentWillMount() {
+    	 var width = this.CalculateCandlesWidth(75);
+        this.setState({ zoom: this.GetZoom(), WidthCandle: width  })
+    }
 
 	/*Eventos*/
 	handleMouseOver(event){
@@ -19,6 +29,36 @@ class Chart extends Component {
 		event.target.setAttribute('stroke-width', '0.1');
 	}	
 
+	/*
+		When the zoom has changed we reecalculate the position of the hole elements
+	*/
+	GetZoom(){
+		return this.state.zoom; 
+	}
+
+	moreZoom() {
+    	var width = this.CalculateCandlesWidth(this.state.zoom + 10);
+        this.setState({ zoom: this.state.zoom + 10, WidthCandle: width  })
+    }
+    lessZoom() {
+    	var width = this.CalculateCandlesWidth(this.state.zoom - 10);
+        this.setState({ zoom: this.state.zoom - 10, WidthCandle: width  })
+    }
+
+	/*
+		Zoom is calculated based on the how many candles will be displayed 
+		If there will be 75 candles the zoom si 100%
+		Other side if it would be more candles the zoom is higher
+	*/
+	CalculateCandlesWidth(zoom){
+		if(this.props.data.length > zoom){
+			const ChartSize = 290 - zoom ;
+			return ChartSize / zoom;
+		}else{
+			const ChartSize = 290 - zoom ;
+			return ChartSize / zoom;
+		}
+	}
 
 	/*Calculate the color of the bar with the close an open values*/
 	calculateColor(currentCandle){
@@ -57,18 +97,18 @@ class Chart extends Component {
 
 			const actual = {
 				id: "candle" + i,
-				rectX : 0.5 + ((1+this.props.WidthCandle)*i) + "",
+				rectX : 0.5 + ((1+this.state.WidthCandle)*i) + "",
 				rectY:  rectY + 7 + "" ,
-				width: this.props.WidthCandle + "",
+				width: this.state.WidthCandle + "",
 				height: ( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) + "" ,
 				
-				lineTopX1: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
-				lineTopX2: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
+				lineTopX1: 0.5 + ((1+this.state.WidthCandle)*i) + ((0.5)*(this.state.WidthCandle)) + "",
+				lineTopX2: 0.5 + ((1+this.state.WidthCandle)*i) + ((0.5)*(this.state.WidthCandle)) + "",
 				lineTopY1: ( (rectY -  ( unity * Math.abs(this.props.data[i].high - this.props.data[i].open))  ))  + 7 + "", 
 				lineTopY2: rectY + 7 +"",
 
-				lineBottomX1: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
-				lineBottomX2: 0.5 + ((1+this.props.WidthCandle)*i) + ((0.5)*(this.props.WidthCandle)) + "",
+				lineBottomX1: 0.5 + ((1+this.state.WidthCandle)*i) + ((0.5)*(this.state.WidthCandle)) + "",
+				lineBottomX2: 0.5 + ((1+this.state.WidthCandle)*i) + ((0.5)*(this.state.WidthCandle)) + "",
 				lineBottomY1: rectY + ( unity * Math.abs(this.props.data[i].open - this.props.data[i].close) ) + 7 +"", //  
 				lineBottomY2: lby2 + 7 +  "", // 
 
@@ -82,9 +122,9 @@ class Chart extends Component {
 
 	GetContainers(){
 		const result = [];
-		const width = this.props.WidthCandle;
+		const width = this.state.WidthCandle;
 		for (var i = 0; i<this.props.data.length; i++) {
-			const actual = { id: 0.5 + ((1+this.props.WidthCandle)*i) + "", width: width+"" }
+			const actual = { id: 0.5 + ((1+this.state.WidthCandle)*i) + "", width: width+"" }
 			result.push(actual)
 		}
 		return result
@@ -101,9 +141,9 @@ class Chart extends Component {
 		for (var i = 0; i<this.props.data.length; i++) {
 			const actual = { 
 				id : i,
-				x: 0.5 + ((1+this.props.WidthCandle)*i) + "",
+				x: 0.5 + ((1+this.state.WidthCandle)*i) + "",
 				y: 0,//(0 + ((3 / Math.abs(this.props.MinsMaxs.MaxVol) ) * Math.abs(this.props.data[i].volume) ) )+ "",
-				width: this.props.WidthCandle,
+				width: this.state.WidthCandle,
 				height:  ((3 / Math.abs(this.props.MinsMaxs.MaxVol) ) * Math.abs(this.props.data[i].volume) ) + ""
 			}
 			result.push(actual)
@@ -164,7 +204,7 @@ class Chart extends Component {
 
 			                        {
 			                        	Candles.map( (item) => {
-			                        		return <Candle WidthCandle = {this.props.WidthCandle + ""} 
+			                        		return <Candle WidthCandle = {this.state.WidthCandle + ""} 
 							                        		id = {item.id}
 							                        		rectX = {item.rectX}
 															rectY = {item.rectY}

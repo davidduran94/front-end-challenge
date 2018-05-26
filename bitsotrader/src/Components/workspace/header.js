@@ -3,9 +3,71 @@ import React, {Component} from 'react';
 
 /*
 	Description: Component shows bitso's logo and sections of wallet, exchange, user and theme color change 
-	Style:       trades.less
+	Style:       maim.less
 */
 class Header extends Component {
+
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      error: null,
+	      isLoaded: false,
+	      theme: "dark",
+	    };
+	}
+
+    componentWillMount() {
+        this.setState({ theme: "dark" })
+    }
+
+	handleThemeChanger = (event, theme) => {
+		if(theme == "dark"){
+			
+			document.getElementsByClassName("header")[0].style.backgroundColor = "#747f89"
+			var elementArray = document.getElementsByClassName("candleCont")
+			for (var i = 0; i < elementArray.length; ++i)
+    			elementArray[i].style.fill = "white"
+
+			document.getElementsByClassName("worspaceContainer")[0].style.backgroundColor = "white"
+			document.getElementsByClassName("chartContainer")[0].style.backgroundColor = "white"
+			document.getElementsByClassName("subheader")[0].style.backgroundColor = "#b0bac1"
+			document.getElementsByClassName("divSelectorDark")[0].style.backgroundColor = "#b0bac1"
+			document.getElementsByClassName("divSelectorDark")[1].style.backgroundColor = "#b0bac1"
+			document.getElementsByClassName("divSelectorDark")[2].style.backgroundColor = "#b0bac1"
+
+		
+
+			document.getElementsByClassName("sellContainer")[0].style.backgroundColor = "#cccccc"
+			document.getElementsByClassName("lastTradesBox")[0].style.backgroundColor = "#cccccc"
+			document.getElementsByClassName("buyContainer")[0].style.backgroundColor = "#cccccc"
+			document.getElementsByClassName("merc")[0].style.backgroundColor = "#cccccc"
+
+			
+			var elementArray = document.getElementsByClassName("navItem")
+			for (var i = 0; i < elementArray.length; ++i)
+    			elementArray[i].style.backgroundColor = "#cccccc"
+
+			var elementArray = document.getElementsByClassName("greenLetter")
+			for (var i = 0; i < elementArray.length; ++i)
+    			elementArray[i].style.color = "#466830"
+			
+			var elementArray = document.getElementsByClassName("lightLetter")
+			for (var i = 0; i < elementArray.length; ++i)
+    			elementArray[i].style.color = "black"
+		
+
+			document.getElementById("mySidenav").style.backgroundColor = "#cccccc"
+
+			
+
+			
+
+			this.setState({ theme: "white" })
+		}
+		else {
+			this.setState({ theme: "dark" })
+		}	
+	}
 
 	render(){
 		return (
@@ -44,7 +106,7 @@ class Header extends Component {
 			      </div>
 			      <div className="col16 dataH"> 
 			      	<label className="switch">
-					  <input type="checkbox" />
+					  <input type="checkbox" onClick={((e) => this.handleThemeChanger(e, this.state.theme))} />
 					  <span className="slider round"></span>
 					</label>
 			      </div>

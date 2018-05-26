@@ -6,4 +6,4 @@ import data from './src/Components/chart/api.json';
 
 const app = document.getElementById('container'); 
 
-ReactDom.render(<Workspace currency="btc_mxn" period="3months" data={data} />, app );
+ReactDom.render(<Workspace currency="btc_mxn" period="3months" theme='dark' zoom={75} />, app );
