@@ -34,9 +34,7 @@ class Header extends Component {
 			document.getElementsByClassName("divSelectorDark")[0].style.backgroundColor = "#b0bac1"
 			document.getElementsByClassName("divSelectorDark")[1].style.backgroundColor = "#b0bac1"
 			document.getElementsByClassName("divSelectorDark")[2].style.backgroundColor = "#b0bac1"
-
-		
-
+			document.getElementsByClassName("vertical")[0].style.color = "black"
 			document.getElementsByClassName("sellContainer")[0].style.backgroundColor = "#cccccc"
 			document.getElementsByClassName("lastTradesBox")[0].style.backgroundColor = "#cccccc"
 			document.getElementsByClassName("buyContainer")[0].style.backgroundColor = "#cccccc"
@@ -53,7 +51,7 @@ class Header extends Component {
 			
 			var elementArray = document.getElementsByClassName("lightLetter")
 			for (var i = 0; i < elementArray.length; ++i)
-    			elementArray[i].style.color = "black"
+    			elementArray[i].style.color  = "black"
 		
 
 			document.getElementById("mySidenav").style.backgroundColor = "#cccccc"
