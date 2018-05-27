@@ -30,6 +30,7 @@ class Header extends Component {
 
 			document.getElementsByClassName("worspaceContainer")[0].style.backgroundColor = "white"
 			document.getElementsByClassName("chartContainer")[0].style.backgroundColor = "white"
+			document.getElementsByClassName("chartContainer")[1].style.backgroundColor = "white"
 			document.getElementsByClassName("subheader")[0].style.backgroundColor = "#b0bac1"
 			document.getElementsByClassName("divSelectorDark")[0].style.backgroundColor = "#b0bac1"
 			document.getElementsByClassName("divSelectorDark")[1].style.backgroundColor = "#b0bac1"
@@ -39,7 +40,7 @@ class Header extends Component {
 			document.getElementsByClassName("lastTradesBox")[0].style.backgroundColor = "#cccccc"
 			document.getElementsByClassName("buyContainer")[0].style.backgroundColor = "#cccccc"
 			document.getElementsByClassName("merc")[0].style.backgroundColor = "#cccccc"
-
+			document.getElementById("mySidenav").style.backgroundColor = "#cccccc"
 			
 			var elementArray = document.getElementsByClassName("navItem")
 			for (var i = 0; i < elementArray.length; ++i)
@@ -53,13 +54,6 @@ class Header extends Component {
 			for (var i = 0; i < elementArray.length; ++i)
     			elementArray[i].style.color  = "black"
 		
-
-			document.getElementById("mySidenav").style.backgroundColor = "#cccccc"
-
-			
-
-			
-
 			this.setState({ theme: "white" })
 		}
 		else {

@@ -1,17 +1,34 @@
 import React, {Component} from 'react';
 
 
-class Settings extends Component {
+class Settings extends Component 
+{
 	constructor(props){
 		super(props);	
 	}
 
 	/*Eventos*/
-	handleMouseOver (event) { 
+	handleMouseOver (event) 
+	{ 
 		event.target.setAttribute('stroke-width', '0.4');
 	}
-	handleMouseOut(event){
+	handleMouseOut(event)
+	{
 		event.target.setAttribute('stroke-width', '0.1');
+	}
+
+	showDeepMarket = (event) => {
+		document.getElementById("chartContainerR").style.display = "none"
+		document.getElementById("deepIcon").style.display = "none"
+		document.getElementById("deepContainerR").style.display = "block"
+		document.getElementById("candleIcon").style.display = "block"
+	}
+
+	showChart = (event) => {
+		document.getElementById("chartContainerR").style.display = "block"
+		document.getElementById("deepIcon").style.display = "block"
+		document.getElementById("deepContainerR").style.display = "none"
+		document.getElementById("candleIcon").style.display = "none"
 	}
 
 	render(){
@@ -21,7 +38,12 @@ class Settings extends Component {
 				      
 		      	<div className="typeChart"> 
 		      		<div className="col5 dataSH divSelectorLight"> 
-				      	<a href="#" className="selectIconContainer"> <img className="candlesIcons" src="/dist/Assets/Images/SVG/icon_candles.svg" /> </a> 
+				      	<a href="#" onClick={((e) => this.showChart(e))} className="selectIconContainer" id="candleIcon"> 
+				      		<img className="candlesIcons" src="/dist/Assets/Images/SVG/icon_candles.svg" /> 
+				      	</a>
+				      	<a href="#" onClick={((e) => this.showDeepMarket(e))} className="selectIconContainer" id="deepIcon">
+				      		<img className="candlesIcons" src="/dist/Assets/Images/SVG/icon_deep.svg" /> 
+				      	</a> 
 				      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 				    </div>
 		      	</div>
@@ -33,9 +55,13 @@ class Settings extends Component {
 				      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 				    </div>
 
-				    <div className="options">
-				    	
-				    </div>
+				    <div id="periodOptions">
+				      	<ul className="dropdown-options">
+				      		<li className="">1 month</li>
+				      		<li className="">3 months</li>
+				      		<li className="">1 year</li>
+				      	</ul>
+				      </div>
 
 		      	</div>
 

@@ -84,6 +84,7 @@ class LastTrades extends Component {
 				      <td className="precioData">134,134.00</td>
 				      <td className="montoData">0.002523</td>
 				    </tr>
+				    
 				    <tr>
 				      <td className="horaData">12:00:00</td>
 				      <td className="precioData">134,134.00</td>
@@ -134,56 +135,7 @@ class LastTrades extends Component {
 				      <td className="precioData">134,134.00</td>
 				      <td className="montoData">0.002523</td>
 				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
-				    <tr>
-				      <td className="horaData">12:00:00</td>
-				      <td className="precioData">134,134.00</td>
-				      <td className="montoData">0.002523</td>
-				    </tr>
+				    
 				    <tr>
 				      <td className="horaData">12:00:00</td>
 				      <td className="precioData">134,134.00</td>

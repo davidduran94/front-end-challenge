@@ -87,13 +87,14 @@ class CurrencyChart extends Component {
 				  	</div>
 
 				  	<p className="timenavI"> {this.props.time} </p>
-				  	<div id={this.getIdChart()} className="colGraph chartNav" 
-				  						onMouseOver={((e) => this.showNavChart(e, this.props.id ))}  
-									    onMouseOut={((e) => this.hideNavChart(e, this.props.id))} >
+				  	<div id={this.getIdChart()} className="colGraph chartNav" onMouseOver={((e) => this.showNavChart(e, this.props.id ))}  
+						 onMouseOut={((e) => this.hideNavChart(e, this.props.id))} >
+				      	
 				      	<Sparklines data={this.props.data} limit={15} width={100} height={40} margin={5}>
 						    <SparklinesLine color={this.getColorCode()} style={{ fill: "none", strokeWidth: 0.5}} />
 						    <SparklinesSpots style={{ fill: this.getColorCode(), stroke: this.getColorCode, strokeWidth: 0.1 }} />
 						</Sparklines>
+
 			      	</div>
 
 				  </div>

@@ -51,8 +51,8 @@ class Candle extends Component {
         if(data1+30 > 290 ) data1 = data1-30; //screen width ajusment
         if(data2+20 > 90 ) data2 = data2-20;  //screen high ajusment
 
-        tooltip1.setAttributeNS(null,"x", data1+2);
-        tooltip1.setAttributeNS(null,"y", data2+12);
+        tooltip1.setAttributeNS(null,"x", data1);
+        tooltip1.setAttributeNS(null,"y", data2);
         tooltip2.setAttributeNS(null,"x", data1);
         tooltip2.setAttributeNS(null,"y", data2+5);
         tooltip3.setAttributeNS(null,"x", data1);
@@ -103,7 +103,12 @@ class Candle extends Component {
 
 
 	render(){
-		
+		/*
+			<text y="60" transform="rotate(180 50 50) scale(-1 1)">
+                		<tspan className="tooltip" id={this.props.id + "tt5"} x="20" y="20" visibility="hidden"></tspan>
+                		
+                	</text>
+		*/
 		return (
 			<g>
 
@@ -120,11 +125,16 @@ class Candle extends Component {
            		
 	            <g >
 	           		<rect className="tooltip_bg cls-4 volum" id={this.props.id + "bg"} x="20" y="20" rx="3" ry="3" width="30" height="20" strokeWidth="0.6" visibility="hidden"/>
-					<text className="tooltip" id={this.props.id + "tt1"} x="20" y="20" visibility="hidden">Tooltip</text>
-					<text className="tooltip" id={this.props.id + "tt2"} x="20" y="20" visibility="hidden">Tooltip</text>
-					<text className="tooltip" id={this.props.id + "tt3"} x="20" y="20" visibility="hidden">Tooltip</text>
-					<text className="tooltip" id={this.props.id + "tt4"} x="20" y="20" visibility="hidden">Tooltip</text>
-					<text className="tooltip" id={this.props.id + "tt5"} x="20" y="20" visibility="hidden">Tooltip</text>
+					
+				<text transform="rotate(180 50 50) scale(-1 1)">
+					<tspan  className="tooltip" id={this.props.id + "tt1"} x="20" y="20" visibility="hidden">Tooltip</tspan>
+					<tspan transform="rotate(180 50 50) scale(-1 1)" className="tooltip" id={this.props.id + "tt2"} x="20" y="20" visibility="hidden">Tooltip</tspan>
+					<tspan transform="rotate(180 50 50) scale(-1 1)" className="tooltip" id={this.props.id + "tt3"} x="20" y="20" visibility="hidden">Tooltip</tspan>
+					<tspan transform="rotate(180 50 50) scale(-1 1)" className="tooltip" id={this.props.id + "tt4"} x="20" y="20" visibility="hidden">Tooltip</tspan>
+					<tspan transform="rotate(180 50 50) scale(-1 1)" className="tooltip" id={this.props.id + "tt5"} x="20" y="20" visibility="hidden">Tooltip</tspan>
+				</text>
+					
+
 				</g>
 
             </g>

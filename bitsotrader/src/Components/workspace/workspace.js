@@ -5,6 +5,8 @@ import Buys from '../trades/buys.js';
 import Chart from '../chart/chart.js';
 import Settings from '../chart/settings.js';
 import Markets from '../markets/markets.js';
+import DeepMarket from '../deepmarket/deepmarket.js';
+
 
 import Header from '../workspace/header.js';
 import SubHeader from '../workspace/subheader.js';
@@ -92,6 +94,7 @@ class Workspace extends Component {
 
 						      <div className="candleChartContainer row">
 						      	<Chart data={this.state.items} MinsMaxs={MinsMaxs}  />
+						      	<DeepMarket data={this.state.items}  />
 						      </div>
 
 						      <div className="sellBuyContainer row">

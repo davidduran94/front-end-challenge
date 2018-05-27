@@ -9,19 +9,28 @@ class CandleContainer extends Component {
 	}
 
 	/*Eventos*/
-	handleMouseOver(event){
-		event.target.style.fill= 'black'
+	handleMouseOver = (event) => {
+		var element = document.getElementsByClassName('userPhotoCont')[0],
+	    style = window.getComputedStyle(element),
+	    back = style.getPropertyValue('background-color');
+		
+
+		event.target.style.fill= back;
 	}
-	handleMouseOut(event){
-		event.target.style.fill='rgb(25,30,35)'
+	handleMouseOut = (event) => {
+		var element = document.getElementsByClassName('worspaceContainer')[0],
+	    style = window.getComputedStyle(element),
+	    back = style.getPropertyValue('background-color');
+
+		event.target.style.fill=back
 	}
 
 	render(){
 		return (
 			
 			  <rect className="candleCont" x={this.props.id} y="0" width={this.props.width} height="90" strokeWidth="0.3" 
-                onMouseOver={this.handleMouseOver} 
-                onMouseOut={this.handleMouseOut}
+                onMouseOver={((e) => this.handleMouseOver(e, this.props.theme ))} 
+                onMouseOut={((e) => this.handleMouseOut(e, this.props.theme ))}
              />	
 
 			)
