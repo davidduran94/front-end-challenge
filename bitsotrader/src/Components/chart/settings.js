@@ -74,6 +74,7 @@ class Settings extends Component
 		      	</div>
 
 		      	<div className="typeZoom">
+		      	<p id="zoomSpan">Zoom</p>
 			      	<div className="divSelectorDark zoomButtonC"> 
 			      		<div className="less"> 
 					      	<a href="#" className="zoomless"> - </a> 

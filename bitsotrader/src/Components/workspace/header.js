@@ -80,16 +80,16 @@ class Header extends Component {
 
 			    <div className="dataHeaderContainer">
 			      <div className="col16 dataH lineRight"> <p>1 BTC = 158,000.00 MXN</p> </div>
-			      <div className="col16 dataH"> 
+			      <div id="wall" className="col16 dataH"> 
 			      	<p>Wallet</p> 
 			      	<a href="#" className="arrowContainer"> <img className="arrowDown" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 			      </div>
-			      <div className="col16 dataH"> 
+			      <div  id="exchange" className="col16 dataH"> 
 			      	<p>Exchange</p> 
 			      	<a href="#" className="arrowContainer"> <img className="arrowDown" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 			      </div>
-			      <div className="col16 dataH"> <p>Ayuda</p> </div>
-			      <div className="col16 dataH"> 
+			      <div id="help" className="col16 dataH"> <p>Ayuda</p> </div>
+			      <div id="usu" className="col16 dataH"> 
 			      	<div className="userPhotoCircle"> 
 			      		<div className="userPhotoCont"> <div className="userPhoto"> </div> </div>
 			      	</div>

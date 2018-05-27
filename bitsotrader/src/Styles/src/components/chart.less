@@ -188,7 +188,9 @@ line.dash {
     width:20px;
     height:20px;
 }
-
+.zoomSpan{
+	display: none;
+}
 .colVertical{
   margin-left: 10px;
 }
@@ -204,4 +206,51 @@ line.dash {
 
 .hovDataRowN:hover{
   background-color: @NavyHeaders;
+}
+
+
+.sellBuyContainer{
+	@media @tablets, @smartphones {
+		display: block;
+	}
+}
+.rangePrice{
+	@media @tablets, @smartphones {
+		display: none;
+	}
+}
+
+.settingsChart{
+	@media @tablets {
+		height: 50px
+	}
+	@media  @smartphones {
+		display: block;
+		height: 200px;
+	}
+	
+}
+
+.graph{
+	@media @tablets, @smartphones {
+		margin-top: -70px;
+	}
+}
+
+.typeZoom{
+	@media @tablets, @smartphones {
+		width: 100%;
+		margin-right: 50%;
+	}	
+}
+#zoomSpan{
+	@media @tablets, @smartphones {
+		display: block;
+	}	
+}
+
+.zoomButtonC{
+	@media @smartphones {
+		margin: -5px 0px 0px 10px !important;
+	}
 }

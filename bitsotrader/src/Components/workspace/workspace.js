@@ -84,7 +84,7 @@ class Workspace extends Component {
 				
 
 				<div className="container">
-				  <div className="row">
+				  <div className="row rowmed">
 					    <div className="col20">
 					   		<LastTrades/>
 					    </div>
