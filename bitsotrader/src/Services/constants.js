@@ -1,6 +1,8 @@
 export const _URLS={
     historyBook: 'https://bitso.com/trade/chartJSON/',
-    orderBook:'https://api.bitso.com/v3/order_book/?book='
+    //orderBook:'https://api.bitso.com/v3/order_book/?book='
+
+    lastTrades: 'https://api.bitso.com/v3/trades/?book='
 }
 
 export const _CURRENCY={

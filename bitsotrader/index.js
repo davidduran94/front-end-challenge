@@ -7,11 +7,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const app = document.getElementById('container'); 
 
-var url = window.location.href
-var arr = url.split("/")
-const currency = arr[arr.length-2]
-const period = arr[arr.length-1]
+var url = window.location.href;
+var arr = url.split("/");
+var currency = arr[arr.length-3];
+var period = arr[arr.length-2];
+var zoom = arr[arr.length-1];
+
+if(zoom == ""  ){
+	currency = "btc_mxn";
+	period = "1month";
+	zoom = 75;
+}
 
 
 
-ReactDom.render(<Workspace currencyPair={currency} period={period} theme='dark' zoom={75} />, app );
+ReactDom.render(<Workspace currencyPair={currency} period={period} theme='dark' zoom={zoom} />, app );

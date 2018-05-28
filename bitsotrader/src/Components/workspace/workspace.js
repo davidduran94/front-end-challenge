@@ -12,6 +12,8 @@ import Header from '../workspace/header.js';
 import SubHeader from '../workspace/subheader.js';
 
 import {ConsultChart} from '../../Services/consultchart.js';
+import {ConsultLastTrades} from '../../Services/consultlasttrades.js';
+
 import {_URLS} from '../../Services/constants.js';
 import {_CURRENCY} from '../../Services/constants.js';
 import {_TIMEPERIOD} from '../../Services/constants.js';
@@ -32,6 +34,10 @@ class Workspace extends Component {
 
     componentWillMount() {
     	console.log(this.props.currencyPair)
+
+		
+    	
+
     	ConsultChart(_URLS.historyBook, {"book": this.props.currencyPair, "period": _TIMEPERIOD.threemonths })
     	.then((items) => {
     		//console.log(items);
@@ -87,20 +93,20 @@ class Workspace extends Component {
 				<div className="container">
 				  <div className="row rowmed">
 					    <div className="col20">
-					   		<LastTrades/>
+					   		<LastTrades currencyPair={this.props.currencyPair}/>
 					    </div>
 
 					    <div className="col78">
-						      <Settings />
+						      <Settings currencyPair={this.props.currencyPair} />
 
 						      <div className="candleChartContainer row">
-						      	<Chart data={this.state.items} MinsMaxs={MinsMaxs}  />
+						      	<Chart data={this.state.items} MinsMaxs={MinsMaxs} zoom={this.props.zoom}  />
 						      	<DeepMarket data={this.state.items}  />
 						      </div>
 
 						      <div className="sellBuyContainer row">
-									<Buys/>
-									<Sells/>
+									<Buys currencyPair={this.props.currencyPair}/>
+									<Sells currencyPair={this.props.currencyPair} />
 						      </div>
 					    </div>
 

@@ -67,9 +67,9 @@ class Settings extends Component
 
 				    <div id="periodOptions" onMouseLeave={((e) => this.hidePeriods(e))}>
 				      	<ul className="dropdown-options">
-				      		<li className="">1 month</li>
-				      		<li className="">3 months</li>
-				      		<li className="">1 year</li>
+				      		<li className=""><a className="changeCurrLink" href={"/"+this.props.currencyPair+"/1month/75"}> 1 Month </a></li>
+				      		<li className=""><a className="changeCurrLink" href={"/"+this.props.currencyPair+"/3months/100"}> 3 Months </a></li>
+				      		<li className=""><a className="changeCurrLink" href={"/"+this.props.currencyPair+"/1year/120"}> 1 Year </a></li>
 				      	</ul>
 				      </div>
 

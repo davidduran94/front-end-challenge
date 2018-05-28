@@ -26,9 +26,9 @@ class Buys extends Component {
 								    <tr>
 								      <th className="lightLetter"></th>
 								      <th className="lightLetter">sum</th>
-								      <th className="lightLetter"><span className="darkLetter">btc</span> monto</th>
-								      <th className="lightLetter"><span className="darkLetter">mxn</span> valor</th>
-								      <th className="lightLetter"><span className="darkLetter">mxn</span> precio</th>
+								      <th className="lightLetter"><span className="darkLetter">{this.props.currencyPair.split("_")[0]}</span> monto</th>
+								      <th className="lightLetter"><span className="darkLetter">{this.props.currencyPair.split("_")[1]}</span> valor</th>
+								      <th className="lightLetter"><span className="darkLetter">{this.props.currencyPair.split("_")[1]}</span> precio</th>
 								    </tr>
 								  </thead>
 								  <tbody>

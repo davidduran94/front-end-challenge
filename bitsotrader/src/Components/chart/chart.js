@@ -11,14 +11,14 @@ class Chart extends Component {
 	    this.state = {
 	      error: null,
 	      isLoaded: false,
-	      zoom: 75,
+	      zoom: 120,
 	      WidthCandle : "2.88"
 	    };
 	}
 
 	componentWillMount() {
-    	 var width = this.CalculateCandlesWidth(75);
-        this.setState({ zoom: this.GetZoom(), WidthCandle: width  })
+    	var width = this.CalculateCandlesWidth(this.props.zoom);
+        this.setState({ zoom: this.props.zoom, WidthCandle: width  })
     }
 
 	/*Eventos*/
@@ -33,7 +33,7 @@ class Chart extends Component {
 		When the zoom has changed we reecalculate the position of the hole elements
 	*/
 	GetZoom(){
-		return this.state.zoom; 
+		return this.props.zoom; 
 	}
 
 	moreZoom() {
