@@ -31,6 +31,16 @@ class Settings extends Component
 		document.getElementById("candleIcon").style.display = "none"
 	}
 
+
+	showPeriods = (event) => {
+		document.getElementById("periodOptions").style.display = "block"
+		
+	}
+	hidePeriods = (event) => {
+		document.getElementById("periodOptions").style.display = "none"
+		
+	}
+
 	render(){
 		return (
 
@@ -50,12 +60,12 @@ class Settings extends Component
 
 		      	<div className="typePeriod"> 
 		      		<p>Periodo</p>
-		      		<div className="col5 dataSH divSelectorDark"> 
-				      	<span> 3d </span> 
+		      		<div className="col5 dataSH divSelectorDark" onClick={((e) => this.showPeriods(e))}> 
+				      	<span id="periodSpan"> 3d </span> 
 				      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 				    </div>
 
-				    <div id="periodOptions">
+				    <div id="periodOptions" onMouseLeave={((e) => this.hidePeriods(e))}>
 				      	<ul className="dropdown-options">
 				      		<li className="">1 month</li>
 				      		<li className="">3 months</li>
@@ -68,7 +78,7 @@ class Settings extends Component
 		      	<div className="typeInterval"> 
 		      		<p>Intervalo</p>
 		      		<div className="col5 dataSH divSelectorDark"> 
-				      	<span> 1h </span> 
+				      	<span id="intervalSpan" > 1h </span> 
 				      	<a href="#" className="selectIconContainer"> <img className="arrowDown2" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 				    </div>
 		      	</div>

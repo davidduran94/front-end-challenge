@@ -2,17 +2,26 @@ import React, {Component} from 'react';
 
 class SubHeader extends Component {
 
+
+	showCurrencies = (event) => {
+		document.getElementById("currencyOptions").style.display = "block"
+		
+	}
+	hideCurrencies = (event) => {
+		document.getElementById("currencyOptions").style.display = "none"
+		
+	}
 	render(){
 		return (
 
 
 			<div id="subheader" className="subheader"> 
-				      <div className="col5 dataSH"> 
-				      	<p className="greenLetter letterBig1" > BTC/MXN </p> 
+				      <div className="col5 dataSH" onClick={((e) => this.showCurrencies(e))}> 
+				      	<p className="greenLetter letterBig1" > {this.props.currencyPair} </p> 
 				      	<a href="#" className="arrowContainer1"> <img className="arrowDown" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
 				      </div>
-				      <div id="currencyOptions">
-				      	<ul className="dropdown-options">
+				      <div id="currencyOptions" onMouseLeave={((e) => this.hideCurrencies(e))}>
+				      	<ul className="dropdown-options" >
 				      		<li className="">BTC/MXN</li>
 				      		<li className="">ETH/MXN</li>
 				      		<li className="">XRP/MXN</li>

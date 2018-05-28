@@ -31,7 +31,8 @@ class Workspace extends Component {
 	}
 
     componentWillMount() {
-    	ConsultChart(_URLS.historyBook, {"book": _CURRENCY.book_btc_mx, "period": _TIMEPERIOD.threemonths })
+    	console.log(this.props.currencyPair)
+    	ConsultChart(_URLS.historyBook, {"book": this.props.currencyPair, "period": _TIMEPERIOD.threemonths })
     	.then((items) => {
     		//console.log(items);
         	this.setState({ items: items })
@@ -79,8 +80,8 @@ class Workspace extends Component {
 		return (
 			<div className="worspaceContainer">
 				
-				<Header/>
-				<SubHeader/>
+				<Header currencyPair={this.props.currencyPair} />
+				<SubHeader currencyPair={this.props.currencyPair} />
 				
 
 				<div className="container">

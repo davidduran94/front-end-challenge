@@ -30,7 +30,9 @@ class Header extends Component {
 
 			document.getElementsByClassName("worspaceContainer")[0].style.backgroundColor = "white"
 			document.getElementsByClassName("chartContainer")[0].style.backgroundColor = "white"
+			document.getElementsByClassName("sellBuyContainer")[0].style.backgroundColor = "white"
 			document.getElementsByClassName("chartContainer")[1].style.backgroundColor = "white"
+			document.getElementsByClassName("rowmed")[0].style.backgroundColor = "white"
 			document.getElementsByClassName("subheader")[0].style.backgroundColor = "#b0bac1"
 			document.getElementsByClassName("divSelectorDark")[0].style.backgroundColor = "#b0bac1"
 			document.getElementsByClassName("divSelectorDark")[1].style.backgroundColor = "#b0bac1"
@@ -41,6 +43,11 @@ class Header extends Component {
 			document.getElementsByClassName("buyContainer")[0].style.backgroundColor = "#cccccc"
 			document.getElementsByClassName("merc")[0].style.backgroundColor = "#cccccc"
 			document.getElementById("mySidenav").style.backgroundColor = "#cccccc"
+			document.getElementById("periodSpan").style.color = "black"
+			document.getElementById("intervalSpan").style.color = "black"
+			document.getElementById("mySidenav").style.backgroundColor = "#cccccc"
+			document.getElementsByTagName("HTML")[0].style.backgroundColor = "white";
+
 			
 			var elementArray = document.getElementsByClassName("navItem")
 			for (var i = 0; i < elementArray.length; ++i)
@@ -79,7 +86,7 @@ class Header extends Component {
 			    </div>
 
 			    <div className="dataHeaderContainer">
-			      <div className="col16 dataH lineRight"> <p>1 BTC = 158,000.00 MXN</p> </div>
+			      <div className="col16 dataH lineRight"> <p>{"1 " + this.props.currencyPair.split("_")[0] + "= 158,000.00 " + this.props.currencyPair.split("_")[1]}</p> </div>
 			      <div id="wall" className="col16 dataH"> 
 			      	<p>Wallet</p> 
 			      	<a href="#" className="arrowContainer"> <img className="arrowDown" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>
