@@ -83,6 +83,8 @@ class Chart extends Component {
 		*/
 
 		for (i ; i<this.props.data.length; i++) {
+			//if(this.props.data.length > this.state.zoom){ i+=this.state.zoom }
+			//if(i > this.props.data.length){return result}
 			var rectY = 0
 			var unity = (85 / (Math.abs(this.props.MinsMaxs.MaxPrice - this.props.MinsMaxs.MinPrice )))
 			var lby2 = 85;

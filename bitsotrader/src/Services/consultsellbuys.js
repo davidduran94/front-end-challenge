@@ -2,13 +2,13 @@ import {_URLS} from '../Services/constants.js';
 import {_CURRENCY} from '../Services/constants.js';
 
 
-export const ConsultChart = (url,params) => {
+export const ConsultSellBuys = (url,params) => {
 
     var url_params="";
     var responseService={}
 
     
-    var url_params = _URLS.historyBook + params.book+'/'+params.period;
+    var url_params = _URLS.orderBook + params.book;
     
 
     return(
@@ -42,4 +42,4 @@ export const ConsultChart = (url,params) => {
 
 }
 
-export default ConsultChart;
+export default ConsultSellBuys;

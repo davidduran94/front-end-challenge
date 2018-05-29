@@ -87,11 +87,11 @@ class Settings extends Component
 		      	<p id="zoomSpan">Zoom</p>
 			      	<div className="divSelectorDark zoomButtonC"> 
 			      		<div className="less"> 
-					      	<a href="#" className="zoomless"> - </a> 
+					      	<a href={"/"+this.props.currencyPair+ "/1year/" + ((this.props.zoom*1)+15) } className="zoomless"> - </a> 
 					    </div>
 
 					    <div className="more"> 
-					      	<a href="#" className="zoomplus"> + </a> 						      	
+					      	<a href={"/"+this.props.currencyPair+ "/1year/" + (this.props.zoom-15) } className="zoomplus" > + </a> 						      	
 					    </div>
 			      	</div>
 		      	</div>

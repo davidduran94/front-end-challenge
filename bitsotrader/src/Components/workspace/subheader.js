@@ -23,10 +23,10 @@ class SubHeader extends Component {
 				      <div id="currencyOptions" onMouseLeave={((e) => this.hideCurrencies(e))}>
 				      	<ul className="dropdown-options" >
 				      		<li> <a className="changeCurrLink" href="/btc_mxn/1month"> BTC/MXN </a> </li>
-				      		<li className=""><a className="changeCurrLink" href="/eth_mxn/1month"> ETH/MXN </a></li>
-				      		<li className=""><a className="changeCurrLink" href="/xrp_mxn/1month"> XRP/MXN </a></li>
-				      		<li className=""><a className="changeCurrLink" href="/ltc_mxn/1month"> LTC/MXN </a></li>
-				      		<li className=""><a className="changeCurrLink" href="/bch_mxn/1month"> BCH/MXN </a></li>				      		
+				      		<li className=""><a className="changeCurrLink" href="/eth_mxn/1month/75"> ETH/MXN </a></li>
+				      		<li className=""><a className="changeCurrLink" href="/xrp_mxn/1month/75"> XRP/MXN </a></li>
+				      		<li className=""><a className="changeCurrLink" href="/ltc_mxn/1month/75"> LTC/MXN </a></li>
+				      		<li className=""><a className="changeCurrLink" href="/bch_mxn/1month/75"> BCH/MXN </a></li>				      		
 				      	</ul>
 				      </div>
 

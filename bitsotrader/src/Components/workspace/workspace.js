@@ -13,6 +13,7 @@ import SubHeader from '../workspace/subheader.js';
 
 import {ConsultChart} from '../../Services/consultchart.js';
 import {ConsultLastTrades} from '../../Services/consultlasttrades.js';
+import {ConsultSellBuys} from '../../Services/consultsellbuys.js';
 
 import {_URLS} from '../../Services/constants.js';
 import {_CURRENCY} from '../../Services/constants.js';
@@ -29,6 +30,8 @@ class Workspace extends Component {
 	      error: null,
 	      isLoaded: false,
 	      items: [],
+	      lastTrades: [],
+	      orders: []
 	    };
 	}
 
@@ -36,12 +39,19 @@ class Workspace extends Component {
     	console.log(this.props.currencyPair)
 
 		
-    	
-
     	ConsultChart(_URLS.historyBook, {"book": this.props.currencyPair, "period": _TIMEPERIOD.threemonths })
     	.then((items) => {
-    		//console.log(items);
-        	this.setState({ items: items })
+
+    		ConsultLastTrades(_URLS.lastTrades, {"book": this.props.currencyPair })
+    		.then((lt) => {
+
+    			ConsultSellBuys(_URLS.orderBook, {"book": this.props.currencyPair })
+    			.then((books) => {
+        	
+        			this.setState({ items: items, lastTrades: lt, orders:books, isLoaded: true, error:0 })
+
+      		})
+      		})
       	})
     }
 
@@ -86,18 +96,18 @@ class Workspace extends Component {
 		return (
 			<div className="worspaceContainer">
 				
-				<Header currencyPair={this.props.currencyPair} />
+				<Header currencyPair={this.props.currencyPair} price={this.state.lastTrades.payload[0].price} />
 				<SubHeader currencyPair={this.props.currencyPair} />
 				
 
 				<div className="container">
 				  <div className="row rowmed">
 					    <div className="col20">
-					   		<LastTrades currencyPair={this.props.currencyPair}/>
+					   		<LastTrades currencyPair={this.props.currencyPair} data={this.state.lastTrades.payload}/>
 					    </div>
 
 					    <div className="col78">
-						      <Settings currencyPair={this.props.currencyPair} />
+						      <Settings currencyPair={this.props.currencyPair} zoom={this.props.zoom} />
 
 						      <div className="candleChartContainer row">
 						      	<Chart data={this.state.items} MinsMaxs={MinsMaxs} zoom={this.props.zoom}  />
@@ -105,8 +115,8 @@ class Workspace extends Component {
 						      </div>
 
 						      <div className="sellBuyContainer row">
-									<Buys currencyPair={this.props.currencyPair}/>
-									<Sells currencyPair={this.props.currencyPair} />
+									<Buys currencyPair={this.props.currencyPair} data= {this.state.orders.payload.bids}/>
+									<Sells currencyPair={this.props.currencyPair} data= {this.state.orders.payload.asks} />
 						      </div>
 					    </div>
 

@@ -86,7 +86,7 @@ class Header extends Component {
 			    </div>
 
 			    <div className="dataHeaderContainer">
-			      <div className="col16 dataH lineRight"> <p>{"1 " + this.props.currencyPair.split("_")[0] + "= 158,000.00 " + this.props.currencyPair.split("_")[1]}</p> </div>
+			      <div className="col16 dataH lineRight"> <p>{"1 " + this.props.currencyPair.split("_")[0] + " = "+ this.props.price +" "+ this.props.currencyPair.split("_")[1]}</p> </div>
 			      <div id="wall" className="col16 dataH"> 
 			      	<p>Wallet</p> 
 			      	<a href="#" className="arrowContainer"> <img className="arrowDown" src="/dist/Assets/Images/SVG/icon_dropdown.svg" /> </a>

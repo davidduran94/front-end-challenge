@@ -13,7 +13,11 @@ var currency = arr[arr.length-3];
 var period = arr[arr.length-2];
 var zoom = arr[arr.length-1];
 
-if(zoom == ""  ){
+if(zoom<10){
+	zoom = 15;
+}
+
+if(zoom == "" | currency=="" | period==""  ){
 	currency = "btc_mxn";
 	period = "1month";
 	zoom = 75;

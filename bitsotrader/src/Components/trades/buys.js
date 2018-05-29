@@ -5,9 +5,29 @@ import React, {Component} from 'react';
 	Style:       trades.less
 */
 class Buys extends Component {
-	render(){
-		return (
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      error: null,
+	      isLoaded: false,
+	      items: [],
+	    };
+	}
 
+	render(){
+
+		const listItems = this.props.data.map((actual) =>
+
+			<tr className="hovDataRowG">
+		      <td className="barDataG"> <div className="barGreen barSize"></div> </td>
+		      <td className="horaData">1.09</td>
+		      <td className="montoData">{actual.amount}</td>
+		      <td className="montoData">{actual.price}</td>
+		      <td className="precioData">{actual.price}</td>
+    		</tr>
+		);		     
+
+		return (
 
 				<div className="col50">
 
@@ -15,12 +35,13 @@ class Buys extends Component {
 					      		
 					      		<div className="buyTitle">
 					      			<p>Posturas de Compra</p>
-					      			<p>MXN Bid 319,140.00</p>
+					      			<p>
+					      			{"MXN Bid" + this.props.data[0].price}</p>
 					      		</div>
 
 					      	</div>
 
-				      		<div className="lastTradesTableC">
+				      		<div className="lastTradesTableC lastTradesTableD">
 								<table className="tableMData">
 								  <thead>
 								    <tr>
@@ -32,56 +53,9 @@ class Buys extends Component {
 								    </tr>
 								  </thead>
 								  <tbody>
-								    <tr className="hovDataRowG">
-								      <td className="barDataG"> <div className="barGreen"></div> </td>
-								      <td className="horaData">12:00:00</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="precioData">134,134.00</td>
-						    		</tr>
-						    		<tr className="hovDataRowG">
-								      <td className="barDataG"> <div className="barGreen"></div> </td>
-								      <td className="horaData">12:00:00</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="precioData">134,134.00</td>
-						    		</tr>
-						    		<tr className="hovDataRowG">
-								      <td className="barDataG"> <div className="barGreen"></div> </td>
-								      <td className="horaData">12:00:00</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="precioData">134,134.00</td>
-						    		</tr>
-						    		<tr className="hovDataRowG">
-								      <td className="barDataG"> <div className="barGreen"></div> </td>
-								      <td className="horaData">12:00:00</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="precioData">134,134.00</td>
-						    		</tr>
-						    		<tr className="hovDataRowG">
-								      <td className="barDataG"> <div className="barGreen"></div> </td>
-								      <td className="horaData">12:00:00</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="precioData">134,134.00</td>
-						    		</tr>
-						    		<tr className="hovDataRowG">
-								      <td className="barDataG"> <div className="barGreen"></div> </td>
-								      <td className="horaData">12:00:00</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="precioData">134,134.00</td>
-						    		</tr>
-						    		<tr className="hovDataRowG">
-								      <td className="barDataG"> <div className="barGreen"></div> </td>
-								      <td className="horaData">12:00:00</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="montoData">0.002523</td>
-								      <td className="precioData">134,134.00</td>
-						    		</tr>
-						    		
+								    
+								  	{listItems}
+
 						    	   </tbody>
 						    	 </table>
 						   	</div>
