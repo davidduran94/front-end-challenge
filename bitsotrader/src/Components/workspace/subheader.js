@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
 
+/*
+
+	Description: 	Represent the area above the header and shows price max an min
+	Style:       workspace.less
+*/
+
 class SubHeader extends Component {
 
 

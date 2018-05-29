@@ -12,10 +12,8 @@ class Markets extends Component {
 	}
 
 	/*
-		Eventos
+		Events
 	*/
-
-
 	openNav() {
     	document.getElementById("mySidenav").style.width = "320px";
     	document.getElementById("marketItemC").style.display = "block";

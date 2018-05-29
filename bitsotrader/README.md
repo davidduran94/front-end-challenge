@@ -53,3 +53,7 @@ Cross Domain - CORS (https://addons.mozilla.org/es/firefox/addon/cross-domain-co
 ![alt text](https://github.com/davidduran94/front-end-challenge/blob/master/bitsotrader/dist/Assets/Images/ejemplo2.png)
 ## Example Image Theme White
 ![alt text](https://github.com/davidduran94/front-end-challenge/blob/master/bitsotrader/dist/Assets/Images/ejemplo1.png)
+
+## Example Image Responsive
+![alt text](https://github.com/davidduran94/front-end-challenge/blob/master/bitsotrader/dist/Assets/Images/responsive1.png)
+![alt text](https://github.com/davidduran94/front-end-challenge/blob/master/bitsotrader/dist/Assets/Images/responsive2.png)

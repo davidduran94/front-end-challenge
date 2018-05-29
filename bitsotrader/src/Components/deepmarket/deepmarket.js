@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 
+/*
+	Description: Component that shows the information about spread 
+	Style:       deepmarket.less
+*/
 
 class DeepMarket extends Component {
 	constructor(props) {

@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
-
+/*
+	Description: Component that represents a unike candle on ther chart
+	Style:       markets.less
+*/
 class Candle extends Component {
 	state = {
 			rectX : "0.5",

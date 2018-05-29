@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import Tooltip from "react-simple-tooltip"
 
-
+/*
+	Description: This Component represents the container that change its color when is hover  
+	Style:       markets.less
+*/
 class CandleContainer extends Component {
 	constructor(props){
 		super(props);

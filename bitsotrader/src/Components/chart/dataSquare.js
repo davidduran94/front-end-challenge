@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
-
+/*
+	Description: Component that shows the information of the proce, volume, max and min on the candle hover
+	Style:       trades.less
+*/
 class DataSquare extends Component {
 	constructor(props){
 		super(props);

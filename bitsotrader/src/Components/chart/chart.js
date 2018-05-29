@@ -4,7 +4,12 @@ import VolumeBar from '../chart/volumeBar.js';
 import CandleContainer from '../chart/candleContainer.js';
 import Candle from '../chart/candle.js';
 
+/*
+	Description: Component that shows the information of the hole candle chart with events, 
+				 calculation of the high, with and color of the candles 
 
+	Style:       trades.less
+*/
 class Chart extends Component {
 	constructor(props) {
 	    super(props);

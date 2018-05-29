@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
-
+/*
+	Description: Component that controlls que parameters of the cart like period or intervarl. Also change to the
+				 spread chart 
+	Style:       markets.less
+*/
 class Settings extends Component 
 {
 	constructor(props){

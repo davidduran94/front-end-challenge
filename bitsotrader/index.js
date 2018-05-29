@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Workspace from './src/Components/workspace/workspace.js'
-import data from './src/Components/chart/api.json';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+/* The URL is composed by 3 parameters, 
+	currency (btc_mxn)
+	period (1month)
+	zoom (75)
+*/
 
 const app = document.getElementById('container'); 
 

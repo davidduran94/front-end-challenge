@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
-
+/*
+	Description: Component that represents the volume bar on the bottom of candle chart 
+	Style:       trades.less
+*/
 class VolumeBar extends Component {
 	constructor(props){
 		super(props);
