@@ -50,4 +50,5 @@ Cross Domain - CORS (https://addons.mozilla.org/es/firefox/addon/cross-domain-co
 
 
 ## Example Image 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/davidduran94/front-end-challenge/blob/master/bitsotrader/dist/Assets/Images/ejemplo1.png)
+![alt text](https://github.com/davidduran94/front-end-challenge/blob/master/bitsotrader/dist/Assets/Images/ejemplo2.png)
