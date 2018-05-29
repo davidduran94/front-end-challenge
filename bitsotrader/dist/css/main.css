@@ -1,0 +1,1056 @@
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+@font-face {
+  font-family: BitsoLight;
+  src: url('/dist/Assets/Fonts/DINPro-Light.otf');
+}
+@font-face {
+  font-family: BitsoMedium;
+  src: url('/dist/Assets/Fonts/DINPro-Medium.otf');
+}
+@font-face {
+  font-family: BitsoRegular;
+  src: url('/dist/Assets/Fonts/DINPro-Regular.otf');
+}
+html,
+body {
+  border: 0;
+  font-family: BitsoLight, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background-color: #191e23;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+/*removes default styles on browsers*/
+#header .header {
+  background-color: #252c36;
+  width: 100%;
+  height: 100px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+}
+.switch input {
+  display: none;
+}
+.lineRight p {
+  text-transform: uppercase;
+}
+.letterBig1 {
+  text-transform: uppercase;
+}
+.lightLetter {
+  text-transform: uppercase;
+}
+.colorbuy {
+  color: #466830 !important;
+}
+.colorsell {
+  color: #722837 !important;
+}
+.horaData {
+  color: #4e5863 !important;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #191e23;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #384555;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #161a1e;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.redLetter {
+  color: #b62d44;
+}
+.greenLetter {
+  color: #80c156;
+}
+.darkLetter {
+  color: #4e5863;
+}
+.lightLetter {
+  color: #b0bac1;
+  text-align: right;
+}
+.letterBig1 {
+  font-size: 15px;
+}
+.space {
+  min-width: 20%;
+}
+.dataH p {
+  margin-top: 4px;
+  display: flex;
+  margin-left: 10px;
+}
+.downArrow {
+  display: block;
+  width: 10px;
+  height: 8px;
+  background-size: 10px 8px;
+}
+.typePeriod {
+  display: flex;
+  justify-content: flex-start;
+}
+.typeInterval {
+  display: flex;
+  justify-content: flex-start;
+}
+.typePeriod p {
+  margin-top: 22px;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+.typeInterval p {
+  margin-top: 22px;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+.divSelectorDark span {
+  margin-top: -6px;
+}
+.arrowDown {
+  width: 15px;
+  margin: 0 0 4px 6px;
+}
+.arrowDown2 {
+  width: 15px;
+  margin: -7px 0 6px 7px;
+}
+.candlesIcons {
+  width: 23px;
+  margin: -3px 1px 4px 2px;
+}
+.arrowContainer {
+  margin: 8px 0 0 5px;
+}
+.divSelectorLight {
+  width: 7px;
+  height: 21px;
+  background-color: #252c36;
+  margin: 20px 0 0 5px !important;
+  border-radius: 20px;
+}
+.divSelectorDark {
+  width: 7px;
+  height: 21px;
+  background-color: #161a1e;
+  margin: 20px 0 0 5px !important;
+  border-radius: 20px;
+  border: 1.5px solid #252c36;
+}
+.less {
+  width: 50%;
+  border-right: 1px solid #252c36;
+}
+.zoomless {
+  font-size: 37px;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+  height: 1px;
+  position: absolute;
+  margin-top: -18px;
+  margin-left: 10px;
+}
+.zoomplus {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  height: 1px;
+  position: absolute;
+  margin-top: -12px;
+  margin-left: 7px;
+}
+.zoomButtonC {
+  min-width: 75px;
+  height: 30px;
+  margin-left: 85% !important;
+  display: flex;
+}
+.typeZoom {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.arrowContainer1 {
+  margin: 5px 0 0 5px;
+}
+.lineRight {
+  border-right: 1px solid white;
+  padding-right: 30px;
+}
+.header {
+  background-color: #1c2129;
+  width: 100%;
+  height: 70px;
+}
+.hovDataRowGR:hover {
+  background-color: #252c36;
+}
+.dataSpace {
+  padding: 5px 0px;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.col78 {
+  min-width: 77%;
+}
+.col75 {
+  min-width: 75%;
+}
+.col70 {
+  min-width: 70%;
+}
+.col55 {
+  min-width: 55%;
+}
+.col50 {
+  min-width: 50%;
+}
+.col33 {
+  width: 33%;
+}
+.col25 {
+  min-width: 25%;
+}
+.col20 {
+  min-width: 20%;
+}
+.col16 {
+  min-width: 1%;
+}
+.col10 {
+  width: 10%;
+}
+.col5 {
+  min-width: 5%;
+}
+.col2 {
+  min-width: 3%;
+}
+.charginC {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -75%);
+  display: flex;
+  margin-top: 25%;
+}
+.charginT {
+  list-style: none;
+  width: 5px;
+  height: 20px;
+  background: #80c156;
+  margin: 0 4px;
+  animation: animate .7s infinite alternate;
+}
+@keyframes animate {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  75% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(4);
+  }
+}
+.charginT:nth-child(1) {
+  animation-delay: .1s;
+}
+.charginT:nth-child(2) {
+  animation-delay: .2s;
+}
+.charginT:nth-child(3) {
+  animation-delay: .3s;
+}
+.charginT:nth-child(4) {
+  animation-delay: .4s;
+}
+.charginT:nth-child(5) {
+  animation-delay: .5s;
+}
+.charginT:nth-child(6) {
+  animation-delay: .6s;
+}
+.charginT:nth-child(7) {
+  animation-delay: .7s;
+}
+.charginT:nth-child(8) {
+  animation-delay: .8s;
+}
+.lastTradesBox {
+  height: 30px;
+  margin: 15px;
+  text-transform: uppercase;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 15px;
+  background-color: #23292d;
+}
+.lastTradesTableC {
+  padding-left: 12px;
+}
+thead tr th {
+  text-transform: uppercase;
+  text-align: right;
+}
+.lastTradesTableC {
+  width: 100%;
+}
+.precioData {
+  color: #80c156;
+  text-align: right;
+}
+.precioDataRed {
+  color: #cc4458;
+  text-align: right;
+}
+.montoData {
+  color: #b0bac1;
+  text-align: right;
+}
+.horaData {
+  color: #b0bac1;
+  text-align: right;
+}
+.barDataG {
+  color: #b0bac1;
+  text-align: right;
+  width: 0px;
+}
+.barDataR {
+  color: #b0bac1;
+  text-align: right;
+  width: 0px;
+}
+.tableLTData {
+  width: 85%;
+  text-align: center;
+}
+.tableMData {
+  width: 96%;
+  text-align: center;
+}
+.lastTradesTableC {
+  max-height: 850px;
+  overflow: auto;
+}
+.lastTradesTableD {
+  max-height: 300px !important;
+  overflow: auto;
+}
+.subheader {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #161a1e;
+  width: 100%;
+  height: 50px;
+}
+.dataSH {
+  margin-top: 4px;
+  display: flex;
+  padding: 10px 55px 0 20px;
+}
+.logoContainer {
+  padding: 20px;
+  display: flex;
+}
+.logoContainer img {
+  height: 35px;
+}
+.logoContainer h2 {
+  margin-top: 5px;
+}
+.logoContainer div {
+  height: 15px;
+  margin-right: 30px;
+  margin-top: 9px;
+}
+.worspaceContainer {
+  color: #b0bac1;
+  width: 100%;
+  height: 1024px;
+  background-color: #191e23;
+}
+.dataHeaderContainer {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #b0bac1;
+}
+.dataHeaderContainer div {
+  margin-right: 5px;
+  display: flex;
+}
+.userPhotoCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #384555;
+  z-index: 1;
+  margin-top: -10px;
+}
+.userPhotoCont {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background-color: #161a1e;
+  z-index: 2;
+  margin: 3.5px 0 0 3.5px;
+}
+.userPhoto {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #384555;
+  z-index: 30;
+  margin-left: 3px;
+  margin: 4.5px 0 0 5px;
+}
+.dropdown-options {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 85px;
+  padding: 15px;
+  margin: 9px 0 0 12px;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: center;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  color: #b0bac1;
+  background-color: #384555;
+}
+.dropdown-options li {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.dropdown-options li:hover {
+  background-color: #161a1e;
+}
+#periodOptions ul {
+  top: 16%;
+  margin: 14px 0 0 29%;
+}
+#periodOptions {
+  display: none;
+}
+#currencyOptions {
+  display: none;
+}
+.changeCurrLink {
+  text-decoration: none;
+  color: #b0bac1;
+}
+/************** RESPONSIVE DESIGN *******************/
+/************** RESPONSIVE DESIGN *******************/
+/************** RESPONSIVE DESIGN *******************/
+@media only screen and (max-width: 479px), only screen and (max-width: 1068px) {
+  .rowmed {
+    display: block;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .logoContainer {
+    display: block;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .logoContainer h2 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 479px) {
+  #mySidenav {
+    height: 70%;
+    top: -50px !important;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  #mySidenav {
+    height: 70%;
+    top: 33px;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  #subheader {
+    height: 70px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  #subheader {
+    height: 200px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 1068px), only screen and (max-width: 479px) {
+  .space {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1068px), only screen and (max-width: 479px) {
+  .lineRight {
+    border: 0;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 1068px), only screen and (max-width: 479px) {
+  .dataH p {
+    margin-left: 70px;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  #help {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  #exchange {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  #wall {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  #usu {
+    display: none;
+  }
+}
+/*
+	*******	Chart Styles ********
+*/
+.candleCont {
+  fill: #191e23;
+}
+.cls-1 {
+  fill: #86af6b;
+  stroke-width: 0.25;
+}
+.cls-1,
+.cls-2 {
+  fill-opacity: 0.4;
+}
+.cls-1,
+.cls-3 {
+  stroke: #80c156;
+}
+.cls-1,
+.cls-2,
+.cls-3 {
+  stroke-miterlimit: 10;
+  stroke-width: 0.25;
+}
+.cls-2 {
+  fill: #ba3040;
+  stroke: #ba3040;
+}
+.cls-4 {
+  fill: #4e5863;
+  stroke: #4e5863;
+}
+.cls-4 {
+  fill-opacity: 0.4;
+}
+.cls-3 {
+  fill: none;
+}
+.greenCandleBar {
+  fill: #86af6b;
+  stroke: #86af6b;
+  fill-opacity: 0.4;
+}
+.redCandleBar {
+  fill-opacity: 0.4;
+  fill: #ba3040;
+  stroke: #ba3040;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* CSS Statements that only apply on webkit-based browsers (Chrome, Safari, etc.) */
+  line.dash {
+    stroke: #1e1e1e;
+    stroke-width: 0.px;
+  }
+}
+line.dash {
+  stroke: #c6c9cc;
+  stroke-width: 0.038;
+}
+.chartContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #191e23;
+}
+#BoxTrading {
+  width: 96%;
+  height: auto;
+  margin-top: -14%;
+}
+.tooltip {
+  fill: white;
+  font-size: 2px;
+}
+.tooltip_bg {
+  fill: #313d4c;
+  opacity: 0.9;
+}
+.rangeTime {
+  width: 97%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #384555;
+}
+.rangePrice {
+  font-size: 12px;
+  color: #384555;
+  width: 30px;
+  height: 335px;
+  display: flex;
+  position: absolute;
+  margin-left: 74.4%;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: -150px;
+}
+.candleChartContainer {
+  margin-top: 12px;
+}
+.settingsChart {
+  height: 70px;
+}
+.sellBuyContainer {
+  margin-top: 240px;
+}
+.buyContainer {
+  height: 40px;
+  background-color: #23292d;
+  margin-right: 10px;
+}
+.sellContainer {
+  height: 40px;
+  background-color: #23292d;
+  margin-left: 10px;
+  width: 98% !important;
+}
+.sellTitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 25px;
+  padding-top: 8px;
+}
+.buyTitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 40px;
+  padding-left: 25px;
+  padding-top: 8px;
+}
+.barGreen {
+  width: 50px;
+  height: 10px;
+  background-color: #80c156;
+}
+.barSize1 {
+  width: 10px;
+}
+.barRed {
+  width: 50px;
+  height: 10px;
+  background-color: #cc4458;
+  margin-left: 15px;
+  float: right;
+}
+.vertical {
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+}
+.verticalI {
+  margin: 13px 0px 10px 12px;
+  text-transform: uppercase;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+}
+#zoomSpan {
+  display: none;
+}
+.colVertical {
+  margin-left: 10px;
+}
+.hovDataRowG:hover {
+  background-color: #466830;
+}
+.hovDataRowR:hover {
+  background-color: #722837;
+}
+.hovDataRowN:hover {
+  background-color: #313d4c;
+}
+@media only screen and (max-width: 1068px), only screen and (max-width: 479px) {
+  .sellBuyContainer {
+    display: block;
+  }
+}
+@media only screen and (max-width: 1068px), only screen and (max-width: 479px) {
+  .rangePrice {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1068px) {
+  .settingsChart {
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .settingsChart {
+    display: block;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 1068px), only screen and (max-width: 479px) {
+  .graph {
+    margin-top: -70px;
+  }
+}
+@media only screen and (max-width: 1068px), only screen and (max-width: 479px) {
+  .typeZoom {
+    width: 100%;
+    margin-right: 50%;
+  }
+}
+@media only screen and (max-width: 479px) {
+  #zoomSpan {
+    display: block;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .zoomButtonC {
+    margin: -5px 0px 0px 10px !important;
+  }
+}
+.sidenav {
+  height: 100%;
+  width: 40px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #252c36;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  margin-top: 121px;
+  margin-right: 0px;
+}
+.topnav {
+  height: 50px;
+  width: 80%;
+  float: right;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #161a1e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 5px;
+  margin-top: 0.5%;
+  margin-right: 0px;
+}
+.navHead {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 1.2em;
+  background-color: #727c84;
+  width: 86%;
+}
+.navHead p {
+  margin-top: 14px;
+  margin-left: 10px;
+}
+.navItem.active {
+  background-color: #161a1e;
+}
+.navItem {
+  padding: 10px;
+  height: 22px;
+  background-color: #23292d;
+}
+.infoNav {
+  display: flex;
+  justify-content: space-between;
+}
+#marketItemC {
+  display: none;
+  margin-top: -63px;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #747f89;
+  display: block;
+  transition: 0.3s;
+}
+.selectIconContainer.right {
+  padding: 0;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.colVertical {
+  margin-top: -22%;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.merc {
+  min-width: 3%;
+  margin: 0 0px 0 0px;
+  background-color: #252c36;
+  color: #b0bac1;
+  margin: -60px 0px 0 0px;
+}
+.timenavI {
+  color: #4e5863;
+  font-size: 0.8em;
+  margin-top: 8.5px;
+  float: right;
+}
+.orderIconCont {
+  padding: 0px !important;
+  margin: 0px !important;
+  margin-top: -8px !important;
+}
+.orderDown {
+  fill: #722837;
+  width: 7px;
+  transform: rotate(180deg);
+}
+.orderUp {
+  fill: #466830;
+  width: 7px;
+}
+.flex {
+  display: flex;
+}
+.colGraph {
+  display: none;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+#deepContainerR {
+  display: none;
+}
+#candleIcon {
+  display: none;
+}
+.text {
+  fill: #313d4c;
+  font-size: 6px;
+}
