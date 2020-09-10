@@ -1,4 +1,5 @@
 # BITSO TRADER (FRONT-END CHALLENGE)
+## <a href="https://bitso-clone.web.app/#">LIVE DEMO</a>
 
 ![Front End Challenge Image](https://github.com/bitsoex/front-end-challenge/blob/master/bann_bfec.jpg)
 
